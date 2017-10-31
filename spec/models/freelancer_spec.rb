@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe Freelancer do
   before do
-    freelancer = Freelancer.create(name:"JoBob Smith", description:"BE Developer", price:"100", image: 0)
+    freelancer = Freelancer.create(name:"JoBob Smith", description:"BE Developer", price:100, image: 0)
     #should we add category id's yet? or add to the column in the next userstory?
 
     it "it has a name" do
