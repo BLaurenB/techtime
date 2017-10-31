@@ -1,7 +1,7 @@
 require 'rails_helper'
 
-RSpec.describe "Freelancer can be created," do
-  background do
+describe Freelancer do
+  before do
     freelancer = Freelancer.create(name:"JoBob Smith", description:"BE Developer", price:"100", image: 0)
     #should we add category id's yet? or add to the column in the next userstory?
 
@@ -26,5 +26,5 @@ RSpec.describe "Freelancer can be created," do
     xit "it has a category " do
 
     end
-
+  end
 end

@@ -58,7 +58,7 @@ RSpec.configure do |config|
   # Filter lines from Rails gems in backtraces.
   config.filter_rails_from_backtrace!
  # Configure Factory Bot, factory_bot_rails
-  config.include FactoryGirl::Syntax::Methods
+  config.include FactoryBot::Syntax::Methods
 
   config.before(:each) do
     DatabaseCleaner.clean
