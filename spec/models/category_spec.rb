@@ -1,5 +1,15 @@
 require 'rails_helper'
 
-RSpec.describe Category, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+describe Category do
+  describe "validations" do
+      it { should validate_presence_of(:title) }
+  end
+
+  describe "relationships" do
+    it "has many freelancers" do
+    category = build(:category)
+
+    expect(category).to respond_to(:freelancers)
+    end
+  end
 end

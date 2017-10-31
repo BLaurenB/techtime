@@ -10,7 +10,7 @@ describe "As a Visitor" do
       visit category_path(category_1)
 
       expect(page).to have_content(category_1.freelancers.first.name)
-      save_and_open_page
+      expect(page).to_not have_content(category_2.freelancers.first.name)
     end
   end
 end
