@@ -1,3 +1,3 @@
 class Category < ApplicationRecord
-  has_many :freelancer
+  has_many :freelancers
 end
