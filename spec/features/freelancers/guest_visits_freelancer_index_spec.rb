@@ -1,9 +1,7 @@
 require 'rails_helper'
 
-
 describe "As a Visitor" do
   describe "when I visit '/freelancers' I can see all freelancers" do
-
     scenario "I see existing freelancers" do
       freelancer = create_list(:freelancer, 3)
 
@@ -17,11 +15,6 @@ describe "As a Visitor" do
       expect(page).to have_content(freelancer[2].price)
       expect(page).to have_css("#image_1")
       expect(page).to have_css("#image_3")
-
     end
-
-
   end
-
-
 end
