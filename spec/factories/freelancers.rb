@@ -4,5 +4,7 @@ FactoryBot.define do
     sequence(:description) { |n| "Freelancer Description #{n}"}
     sequence(:price)       { |n| "Freelancer Price #{n}"}
     image "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
+
+    category
   end
 end
