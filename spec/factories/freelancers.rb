@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :freelancer do
-    name "MyString"
-    description "MyString"
-    price 1
-    image "MyString"
+    sequence(:name)        { |n| "Freelancer Name #{n}"}
+    sequence(:description) { |n| "Freelancer Description #{n}"}
+    sequence(:price)       { |n| "Freelancer Price #{n}"}
+    image "https://images.pexels.com/photos/415829/pexels-photo-415829.jpeg?w=940&h=650&auto=compress&cs=tinysrgb"
   end
 end
