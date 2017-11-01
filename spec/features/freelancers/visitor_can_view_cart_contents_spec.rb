@@ -19,6 +19,7 @@ describe "As a visitor" do
       expect(page).to have_content(@freelancer.description)
       expect(page).to have_content("#{@freelancer.price}/hr")
       expect(page).to have_content("Total: $100")
+      
     end
   end
 end
