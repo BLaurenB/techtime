@@ -14,4 +14,16 @@ class CartController < ApplicationController
     redirect_to freelancers_path
   end
 
+  def destroy
+    freelancer = Freelancer.find(params[:freelancer_id])
+
+    @cart.delete_freelancer(freelancer.id)
+    session[:cart] = @cart.contents
+
+
+    flash[:notice] = "Successfully removed #{freelancer.name} from your cart."
+    redirect_to cart_path
+
+  end
+
 end

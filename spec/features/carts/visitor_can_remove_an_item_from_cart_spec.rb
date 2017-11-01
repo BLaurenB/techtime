@@ -9,11 +9,13 @@ describe "As a visitor" do
 
       visit cart_path
 
+
       expect(page).to have_content(freelancer.name)
 
       click_link "Remove"
 
       expect(current_path).to eq(cart_path)
+
       expect(page).to have_content("Successfully removed #{freelancer.name} from your cart.")
       #check to see that it is styled in green message
       expect(page).to_not have_content("#{freelancer.price}/hr")

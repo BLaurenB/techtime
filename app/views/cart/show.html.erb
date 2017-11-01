@@ -6,6 +6,7 @@
   <h3>Name: <%= freelancer.name %></h3>
   <p><%= freelancer.description %></p>
   <p>$<%= freelancer.price %>/hr</p>
+ <%= link_to "Remove", cart_index_path(freelancer_id: freelancer.id), method: :delete %>
 </div>
 <% end %>
 <div>
