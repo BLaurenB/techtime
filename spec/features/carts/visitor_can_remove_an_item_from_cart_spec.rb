@@ -13,6 +13,7 @@ describe "As a visitor" do
       expect(page).to have_content(freelancer.name)
 
       click_link "Remove"
+      save_and_open_page
 
       expect(current_path).to eq(cart_path)
 
