@@ -11,6 +11,7 @@
   <body>
     <nav>
       <p>Cart: <%= @cart.total_count %></p>
+      <p><%= link_to "View Cart", '/cart' %></p>
     </nav>
     <% flash.each do |type, message| %>
       <%= content_tag :div, message, class: type %>
