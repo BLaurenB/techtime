@@ -12,12 +12,12 @@ describe "As a visitor" do
     end
 
     scenario "I am redirected to the /cart page and see my cart contents" do
-
       expect(current_path).to eq('/cart')
       expect(page).to have_css('#image_1')
       expect(page).to have_content(@freelancer.name)
       expect(page).to have_content(@freelancer.description)
       expect(page).to have_content(@freelancer.price)
+      expect(page).to have_content("Total")
     end
   end
 end
