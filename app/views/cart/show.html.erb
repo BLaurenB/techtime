@@ -1,1 +1,13 @@
 <h1>Current Cart</h1>
+
+<% @freelancers.each do |freelancer| %>
+<div>
+  <%= image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
+  <h3>Name: <%= freelancer.name %></h3>
+  <p><%= freelancer.description %></p>
+  <p>$<%= freelancer.price %>/hr</p>
+</div>
+<% end %>
+<div>
+  <h2>Total: <%= @cart.total_price %></h2>
+</div>
