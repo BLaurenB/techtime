@@ -6,4 +6,15 @@ describe Cart do
   it '#total_count' do
     expect(cart.total_count).to eq(6)
   end
+
+  it '#count_of' do
+    expect(cart.count_of(1)).to eq(2)
+    expect(cart.count_of(-2)).to eq(0)
+  end
+
+  it '#add_freelancer' do
+    cart.add_freelancer(1)
+    cart.add_freelancer(2)
+    expect(cart.contents).to eq({"1" => 3, "2" => 5})
+  end
 end
