@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "As a visitor" do
+xdescribe "As a visitor" do
   describe "When I click on the cart" do
     before do
         #Will need to add a category
@@ -15,4 +15,5 @@ describe "As a visitor" do
 
 
   end
+end 
  #When I click a link for the cart, And my current path should be “/cart” And I should see a small image, title, description and price for the item I just added And there should be a “total” price for the cart that should be the sum of all items in the cart

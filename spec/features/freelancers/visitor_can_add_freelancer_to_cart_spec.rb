@@ -9,7 +9,7 @@ describe "As a visitor" do
     end
 
     scenario "I should see a button for 'Choose Me!'" do
-      expect(page).to have_content("Choose Me!")
+      expect(page).to have_button("Choose Me!")
     end
 
     describe "I click on 'Choose Me!'" do
@@ -26,4 +26,5 @@ describe "As a visitor" do
         expect(page).to have_content("You now have 2 hours of #{@freelancer.name}'s time in your cart.")
       end
     end
+  end
 end

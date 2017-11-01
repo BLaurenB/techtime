@@ -9,6 +9,9 @@
   </head>
 
   <body>
+    <nav>
+      <p>Cart: <%= @cart.total_count %></p>
+    </nav>
     <%= yield %>
   </body>
 </html>
