@@ -21,10 +21,13 @@ class Cart
     contents.keys
   end
 
-  def total_price
-    #get the prices associated with each item, multiply by quantity, sum it up
+  def collect_freelancers
+    Freelancer.where(id: freelancer_ids)
+  end
 
-    #first instinct is to use map on the contents, but there has to be an activerecord way of grabbing the prices associated with each freelancer in the cart and then multiplying by the quantity.
-    # pluck the prices of the freelance ids? then
+  def total_price
+    collect_freelancers.reduce(0) do |sum, freelancer|
+      sum + (freelancer.price * count_of(freelancer.id))
+    end
   end
 end

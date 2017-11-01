@@ -22,8 +22,14 @@ describe Cart do
     expect(cart.freelancer_ids).to eq(["1", "2"])
   end
 
-  xit '#total_price' do
-    #i'm not sure how to test this.... setup would need to include a price for "1"?
-    expect(cart.total_price).to eq()
+  it '#collect_freelancers' do
+    #factory_bot should do it if we set it up in the factory
+    create_list(:freelancer, 2)
+    expect(cart.collect_freelancers.first).to be_an_instance_of(Freelancer)
+  end
+
+  it '#total_price' do
+    create_list(:freelancer, 2, price: 10)
+    expect(cart.total_price).to eq(60)
   end
 end

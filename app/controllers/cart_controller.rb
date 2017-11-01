@@ -1,8 +1,6 @@
 class CartController < ApplicationController
   include ActionView::Helpers::TextHelper
 
-  before_action :collect_freelancers, only: [:show]
-
   def show
   end
 
@@ -16,9 +14,4 @@ class CartController < ApplicationController
     redirect_to freelancers_path
   end
 
-  private
-
-  def collect_freelancers
-    @freelancers = Freelancer.where(id: @cart.freelancer_ids)
-  end
 end
