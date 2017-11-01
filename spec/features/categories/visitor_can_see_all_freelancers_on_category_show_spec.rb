@@ -9,6 +9,7 @@ describe "As a Visitor" do
 
       visit category_path(category_1)
 
+      expect(current_path).to eq("/#{category_1.title}")
       expect(page).to have_content(category_1.freelancers.first.name)
       expect(page).to_not have_content(category_2.freelancers.first.name)
     end
