@@ -6,6 +6,6 @@
   <h3>Name: <%= freelancer.name %></h3>
   <p><%= freelancer.description %></p>
   <p>$<%= freelancer.price %>/hr</p>
-  <%= button_to "Choose Me!", cart_index_path, class: "btn btn-danger"%>
+  <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
 </div>
 <% end %>
