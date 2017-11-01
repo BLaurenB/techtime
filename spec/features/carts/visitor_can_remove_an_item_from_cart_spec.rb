@@ -33,7 +33,7 @@ describe "As a visitor" do
 
       click_link "Remove"
 
-      within(".alert-remove") do
+      within(".remove") do
         click_link  "#{freelancer.name}"
       end
 
