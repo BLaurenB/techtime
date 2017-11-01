@@ -1,9 +1,12 @@
 class CartController < ApplicationController
   include ActionView::Helpers::TextHelper
 
+  def show
+  end
 
   def create
     freelancer = Freelancer.find(params[:freelancer_id])
+
     @cart.add_freelancer(freelancer.id)
     session[:cart] = @cart.contents
 

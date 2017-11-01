@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-xdescribe "As a visitor" do
+describe "As a visitor" do
   describe "When I visit any page with an item on it" do
     before do
         #Will need to add a category
@@ -12,13 +12,10 @@ xdescribe "As a visitor" do
       expect(page).to have_button("Choose Me!")
     end
 
-
     describe "I click on 'Choose Me!'" do
       scenario "a freelancer is added to the Cart" do
-
         expect(page).to have_content("Cart: 0")
         click_on "Choose Me!"
-        save_and_open_page
         expect(page).to have_content("Cart: 1")
       end
 
