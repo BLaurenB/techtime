@@ -7,10 +7,13 @@ describe "As a registered user" do
       visit '/'
       expect(page).to have_content('Login')
       click_on 'Login'
-      expect(current_page).to eq('/login')
+      expect(current_path).to eq('/login')
     end
 
     scenario "I can fill in my credentials" do
+      default = User.create(username: 'normaluser', password:'password', role: 0)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default)
+
       visit '/'
 
       fill_in 'user[username]', with: 'normaluser'
