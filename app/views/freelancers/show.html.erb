@@ -1,11 +1,11 @@
-<div class="container">
-<div class="card text-center" style="width:600px">
-  <img class="card-img-top" src="<%=@freelancer.image%>" alt="Card image cap">
-  <div class="card-block">
-    <h4 class="card-title"> Name: <%=@freelancer.name%></h4>
-    <p class="card-text"><%=@freelancer.description%></p>
-    <p class="list-group-item"><%=@freelancer.price %>/ hr</p>
-    <%= button_to "Choose Me!", cart_index_path(freelancer_id: @freelancer.id), class: "btn btn-primary"%>
+<div class="container d-flex justify-content-center">
+  <div class="card text-center" style="width:600px">
+    <img class="card-img-top" src="<%=@freelancer.image%>" alt="Card image cap">
+    <div class="card-block">
+      <h4 class="card-title"> Name: <%=@freelancer.name%></h4>
+      <p class="card-text"><%=@freelancer.description%></p>
+      <p class="list-group-item"><%=@freelancer.price %>/ hr</p>
+      <%= button_to "Choose Me!", cart_index_path(freelancer_id: @freelancer.id), class: "btn btn-primary"%>
+    </div>
   </div>
-</div>
 </div>
