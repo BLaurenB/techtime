@@ -20,7 +20,7 @@ describe Cart do
 
   it '#delete_freelancer' do
     cart.delete_freelancer(1)
-    expect(cart.contents).to eq({"1" => 0, "2" => 4})
+    expect(cart.contents).to eq({"2" => 4})
   end
 
   it '#freelancer_ids' do
