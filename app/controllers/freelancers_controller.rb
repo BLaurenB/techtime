@@ -4,4 +4,8 @@ class FreelancersController < ApplicationController
     @freelancers = Freelancer.all
   end
 
+  def show
+    @freelancer = Freelancer.find(params[:id])
+  end
+
 end

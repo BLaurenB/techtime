@@ -17,6 +17,11 @@ class Cart
     contents[id.to_s] = (contents[id.to_s] || 0) + 1
   end
 
+  def delete_freelancer(id)
+    contents[id.to_s] = 0
+    contents.delete(id.to_s) 
+  end
+
   def freelancer_ids
     contents.keys
   end

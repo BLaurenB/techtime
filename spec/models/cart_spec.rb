@@ -18,6 +18,11 @@ describe Cart do
     expect(cart.contents).to eq({"1" => 3, "2" => 5})
   end
 
+  it '#delete_freelancer' do
+    cart.delete_freelancer(1)
+    expect(cart.contents).to eq({"2" => 4})
+  end
+
   it '#freelancer_ids' do
     expect(cart.freelancer_ids).to eq(["1", "2"])
   end
