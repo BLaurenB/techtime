@@ -6,11 +6,11 @@
   <h3>Name: <%= freelancer.name %></h3>
   <p><%= freelancer.description %></p>
   <p>Quantity: <%= @cart.count_of(freelancer.id)%></p>
-  <%= button_to "Add another hour", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
-  <%= button_to "Remove 1", cart_path(freelancer_id: freelancer.id), class: "btn btn-danger", method: :patch%>
+  <%= button_to "Add an hour", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
+  <%= button_to "Remove an hour", cart_path(freelancer_id: freelancer.id), class: "btn btn-danger", method: :patch%>
   <p>$<%= freelancer.price %>/hr</p>
   <p> Subtotal: $<%= @cart.subtotal(freelancer) %></p>
-  <%= link_to "Remove", cart_index_path(freelancer_id: freelancer.id), method: :delete %>
+  <%= link_to "Remove #{freelancer.name}'s time from your cart.", cart_index_path(freelancer_id: freelancer.id), method: :delete %>
 
 </div>
 <% end %>

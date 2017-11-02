@@ -15,7 +15,7 @@ describe "As a visitor" do
       expect(page).to have_content("Subtotal: $100")
       expect(page).to have_content("Total: $100")
 
-      click_button "Add another hour"
+      click_button "Add an hour"
 
       expect(current_path).to eq("/cart")
       expect(page).to have_content("Quantity: 2")
@@ -25,12 +25,12 @@ describe "As a visitor" do
     end
 
     scenario "I can decrease the quantity of an item" do
-      click_button "Add another hour"
+      click_button "Add an hour"
       expect(page).to have_content("Quantity: 2")
       expect(page).to have_content("Subtotal: $200")
       expect(page).to have_content("Total: $200")
 
-      click_button "Remove 1"
+      click_button "Remove an hour"
 
 
       expect(page).to have_content("Quantity: 1")
