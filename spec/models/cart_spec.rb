@@ -23,6 +23,11 @@ describe Cart do
     expect(cart.contents).to eq({"2" => 4})
   end
 
+  it '#decrease_freelancer' do
+    cart.decrease_freelancer(1)
+    expect(cart.contents).to eq({"1" => 1, "2" => 4})
+  end
+
   it '#freelancer_ids' do
     expect(cart.freelancer_ids).to eq(["1", "2"])
   end
@@ -31,6 +36,11 @@ describe Cart do
     #factory_bot should do it if we set it up in the factory
     create_list(:freelancer, 2)
     expect(cart.collect_freelancers.first).to be_an_instance_of(Freelancer)
+  end
+
+  it '#subtotal' do
+    freelancer = create(:freelancer, price:10)
+    expect(cart.subtotal(freelancer)).to eq(20)
   end
 
   it '#total_price' do
