@@ -25,4 +25,12 @@ class CartController < ApplicationController
     redirect_to cart_path
   end
 
+  def update
+    freelancer = Freelancer.find(params[:freelancer_id])
+
+    @cart.decrease_freelancer(freelancer.id)
+    session[:cart] = @cart.contents
+    redirect_to cart_path
+  end
+
 end

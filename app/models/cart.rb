@@ -19,7 +19,11 @@ class Cart
 
   def delete_freelancer(id)
     contents[id.to_s] = 0
-    contents.delete(id.to_s) 
+    contents.delete(id.to_s)
+  end
+
+  def decrease_freelancer(id)
+    contents[id.to_s] = contents[id.to_s] - 1
   end
 
   def freelancer_ids

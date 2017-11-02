@@ -31,6 +31,7 @@ describe "As a visitor" do
       expect(page).to have_content("Total: $200")
 
       click_button "Remove 1"
+      
 
       expect(page).to have_content("Quantity: 1")
       expect(page).to have_content("Subtotal: $100")
