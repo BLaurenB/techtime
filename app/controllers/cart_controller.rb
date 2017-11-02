@@ -11,7 +11,7 @@ class CartController < ApplicationController
     session[:cart] = @cart.contents
 
     flash[:notice] = "You now have #{pluralize(@cart.count_of(freelancer.id), 'hour')} of #{freelancer.name}'s time in your cart."
-    redirect_to freelancers_path
+    redirect_to request.referer
   end
 
   def destroy
