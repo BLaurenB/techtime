@@ -19,7 +19,6 @@ describe "As a visitor" do
 
       expect(page).to have_content("Successfully removed #{freelancer.name} from your cart.")
       #check to see that it is styled in green message
-      save_and_open_page
       expect(page).to_not have_content("#{freelancer.price}/hr")
       expect(page).to have_content("Total: $0")
     end

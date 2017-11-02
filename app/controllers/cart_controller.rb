@@ -11,7 +11,7 @@ class CartController < ApplicationController
     session[:cart] = @cart.contents
 
     flash[:notice] = "You now have #{pluralize(@cart.count_of(freelancer.id), 'hour')} of #{freelancer.name}'s time in your cart."
-    redirect_to freelancers_path
+    redirect_to request.referer
   end
 
   def destroy
@@ -23,7 +23,14 @@ class CartController < ApplicationController
 
     flash[:remove] = "Successfully removed #{view_context.link_to "#{freelancer.name}", freelancer_path(freelancer)} from your cart."
     redirect_to cart_path
+  end
 
+  def update
+    freelancer = Freelancer.find(params[:freelancer_id])
+
+    @cart.decrease_freelancer(freelancer.id)
+    session[:cart] = @cart.contents
+    redirect_to cart_path
   end
 
 end
