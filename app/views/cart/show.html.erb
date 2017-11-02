@@ -7,6 +7,7 @@
   <p><%= freelancer.description %></p>
   <p>Quantity: <%= @cart.count_of(freelancer.id)%></p>
   <%= button_to "Add 1", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
+  <%= button_to "Remove 1", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
   <p>$<%= freelancer.price %>/hr</p>
   <p> Subtotal: $<%= @cart.subtotal(freelancer) %></p>
   <%= link_to "Remove", cart_index_path(freelancer_id: freelancer.id), method: :delete %>
