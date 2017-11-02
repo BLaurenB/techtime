@@ -25,6 +25,10 @@ class Cart
     Freelancer.where(id: freelancer_ids)
   end
 
+  def subtotal(freelancer)
+    count_of(freelancer.id) * freelancer.price
+  end
+
   def total_price
     collect_freelancers.reduce(0) do |sum, freelancer|
       sum + (freelancer.price * count_of(freelancer.id))

@@ -28,6 +28,11 @@ describe Cart do
     expect(cart.collect_freelancers.first).to be_an_instance_of(Freelancer)
   end
 
+  it '#subtotal' do
+    freelancer = create(:freelancer, price:10)
+    expect(cart.subtotal(freelancer)).to eq(20)
+  end
+
   it '#total_price' do
     create_list(:freelancer, 2, price: 10)
     expect(cart.total_price).to eq(60)

@@ -9,7 +9,7 @@ describe "As a visitor" do
       click_on "Choose Me"
 
       click_on "Cart"
-
+      
     end
 
     scenario "I am redirected to the /cart page and see my cart contents" do
@@ -17,6 +17,7 @@ describe "As a visitor" do
       expect(page).to have_css('#image_1')
       expect(page).to have_content(@freelancer.name)
       expect(page).to have_content(@freelancer.description)
+      expect(page).to have_content("Quantity: 1")
       expect(page).to have_content("#{@freelancer.price}/hr")
       expect(page).to have_content("Total: $100")
     end
