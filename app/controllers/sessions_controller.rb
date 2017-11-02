@@ -4,4 +4,8 @@ class SessionsController < ApplicationController
 
   end
 
+  def create
+    redirect_to '/dashboard'
+  end
+
 end

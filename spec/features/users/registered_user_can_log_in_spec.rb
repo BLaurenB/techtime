@@ -11,16 +11,18 @@ describe "As a registered user" do
     end
 
     scenario "I can fill in my credentials" do
-      default = User.create(username: 'normaluser', password:'password', role: 0)
-      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default)
+
+      user = User.create(username: 'normaluser', password: 'password', email: "email@email.com", company: "Company", address1: "Address1", city: "Denver", state: "CO", zip:"80303", role: 0)
+      # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default)
 
       visit '/'
-
-      fill_in 'user[username]', with: 'normaluser'
-      fill_in 'user[password]', with: 'password'
       click_on 'Login'
 
-      expect(current_page).to eq('/dashboard') #must be dashboard
+      fill_in "session[username]", with: user.username
+      fill_in "session[password]", with: user.password
+      click_on 'Login'
+
+      expect(current_path).to eq('/dashboard') #must be /dashboard
       expect(page).to have_content('Logged in as normaluser')
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
