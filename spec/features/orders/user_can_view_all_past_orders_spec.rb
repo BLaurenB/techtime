@@ -14,10 +14,12 @@ describe "When I visit Orders" do
 
       visit orders_path
 
+
       expect(page).to have_content("ordered")
       expect(page).to have_content("paid")
       expect(page).to have_content("completed")
       expect(page).to_not have_content("cancelled")
+
     end
   end
 end

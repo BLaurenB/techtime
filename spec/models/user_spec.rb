@@ -12,11 +12,11 @@ describe User do
       it { should validate_presence_of(:zip)      }
   end
 
-  # describe "relationships" do
-  #   it "has many orders" do
-  #   order = build(:order)
-  #
-  #   expect(order).to respond_to(:users)
-  #   end
-  # end
+  describe "relationships" do
+    it "has many orders" do
+    user = build(:user)
+
+    expect(user).to respond_to(:orders)
+    end
+  end
 end
