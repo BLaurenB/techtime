@@ -16,7 +16,9 @@ describe "As a registered user" do
       # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default)
 
       visit '/'
+
       click_link 'Login'
+
 
 
       fill_in "session[username]", with: user.username
@@ -24,11 +26,11 @@ describe "As a registered user" do
       click_button 'Login'
 
       expect(current_path).to eq('/dashboard')
-
       expect(page).to have_content('Logged in as normaluser')
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
-      #And I should see my profile information
+
+    
     end
   end
 
