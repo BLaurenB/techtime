@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :freelancers, only: [:index, :show]
   resources :categories, only: [:index, :show]
   resources :users, only: [:new, :create]
+  resources :orders, only: [:index]
 
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
