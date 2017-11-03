@@ -9,7 +9,7 @@ describe "As a visitor" do
       click_on "Choose Me"
 
       click_on "Cart"
-      
+
     end
 
     scenario "I am redirected to the /cart page and see my cart contents" do
@@ -20,7 +20,15 @@ describe "As a visitor" do
       expect(page).to have_content("Quantity: 1")
       expect(page).to have_content("#{@freelancer.price}/hr")
       expect(page).to have_content("Total: $100")
-      
+
+    end
+
+    scenario "I should not see a checkout button" do
+      expect(page).to have_content(@freelancer.name)
+      within ".login-to-checkout" do
+        expect(page).to have_content("Login or Create Account to Checkout")
+      end
+      expect(page).to_not have_css(".checkout")
     end
   end
 end

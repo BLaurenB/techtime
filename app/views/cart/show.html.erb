@@ -17,3 +17,12 @@
 <div>
   <h2>Total: $<%= @cart.total_price %></h2>
 </div>
+<% if current_user.nil? %>
+  <div class="login-to-checkout">
+    <%= link_to "Login or Create Account to Checkout", login_path %>
+  </div>
+<% else %>
+  <div class="checkout">
+    <% button_to "Checkout", "#" %>
+  </div>
+<% end %>
