@@ -22,7 +22,7 @@ describe "When I visit Orders" do
 
     end
 
-    scenario "I see a link to view the order" do
+    scenario "I click a link to view an order" do
       user_1 = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
