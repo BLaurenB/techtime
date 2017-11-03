@@ -1,7 +1,6 @@
 class SessionsController < ApplicationController
 
   def new
-
   end
 
   def create
@@ -14,6 +13,11 @@ class SessionsController < ApplicationController
       render :new
       flash[:notice] = "Something went wrong! Please try again"
     end
+  end
+
+  def destroy
+    session.clear
+    redirect_to login_path
   end
 
 end

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   get '/login', to: 'sessions#new'
   post '/login', to: 'sessions#create'
   get '/dashboard', to: 'users#show'
+  get '/logout', to: 'sessions#destroy'
 
   get '/cart', to: 'cart#show'
   patch '/cart', to: 'cart#update'
