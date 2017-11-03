@@ -69,8 +69,6 @@ describe "As a visitor" do
         fill_in "user[zip]", with: "37919"
         click_button 'Create Account'
 
-        click_button "Create Account"
-
         visit cart_path
         expect(page).to have_content(@freelancer.name)
         expect(page).to have_content(@freelancer.description)
