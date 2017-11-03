@@ -16,13 +16,15 @@ describe "As a registered user" do
       # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default)
 
       visit '/'
-      click_on 'Login'
+      click_link 'Login'
+
 
       fill_in "session[username]", with: user.username
       fill_in "session[password]", with: user.password
-      click_on 'Login'
+      click_button 'Login'
 
-      expect(current_path).to eq('/dashboard') #must be /dashboard
+      expect(current_path).to eq('/dashboard')
+
       expect(page).to have_content('Logged in as normaluser')
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
