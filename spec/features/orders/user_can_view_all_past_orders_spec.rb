@@ -21,5 +21,18 @@ describe "When I visit Orders" do
       expect(page).to_not have_content("cancelled")
 
     end
+
+    scenario "I see a link to view the order" do
+      user_1 = create(:user)
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
+
+      order = user_1.orders.create!(status: "ordered")
+
+      visit orders_path
+
+      click_on "View Details"
+
+      expect(current_path).to eq(order_path(order))
+    end
   end
 end
