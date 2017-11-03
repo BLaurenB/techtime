@@ -5,9 +5,25 @@ class UsersController < ApplicationController
   end
 
   def create
-  end  
+    @user = User.new(user_params)
+
+    if @user.save
+      flash[:success] = "Logged in as #{@user.username}"
+      session[:user_id] = @user.id
+      redirect_to '/dashboard'
+    else
+      render :new
+      flash[:danger] = "Try again! Information is wrong."
+    end
+  end
 
   def show
     @user = current_user
+  end
+
+  private
+
+  def user_params
+    params.require(:user).permit(:username, :password, :email, :company, :address1, :address2, :city, :state, :zip)
   end
 end

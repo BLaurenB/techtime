@@ -15,10 +15,17 @@ end
     visit '/'
     click_on 'Login'
     click_on 'Create Account'
-  
+
 
     fill_in "user[username]", with: "Emily"
     fill_in "user[password]", with: "123"
+    fill_in "user[email]", with: "wise@gmail.com"
+    fill_in "user[company]", with: "Google"
+    fill_in "user[address1]", with: "Marshall's House"
+    fill_in "user[address2]", with: "The Treehouse"
+    fill_in "user[city]", with: "Memphis"
+    fill_in "user[state]", with: "TN"
+    fill_in "user[zip]", with: "37919"
     click_button 'Create Account'
 
 
