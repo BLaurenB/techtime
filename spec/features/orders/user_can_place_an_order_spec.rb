@@ -22,9 +22,6 @@ describe "As a user when I have freelancers in my cart" do
       click_button "Checkout"
 
       expect(page).to have_content("Order: 1")
-      expect(page).to have_content("Quantity: 1 hour")
-      expect(page).to have_content("Subtotal: $150")
-      expect(page).to have_content("Total: $150")
       expect(page).to have_content("Ordered")
     end
   end

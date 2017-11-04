@@ -9,7 +9,14 @@ class OrdersController < ApplicationController
   end
 
   def create
-
+    @user = current_user
+    order = @user.orders.create(status: "ordered")
+    params[:cart_contents].each do |freelancer_id, quantity|
+      freelancer = Freelancer.find(freelancer_id.to_i)
+      quantity.to_i.times do
+        order.freelancers << freelancer
+      end
+    end
     flash[:success] = "Order was successfully placed!"
     redirect_to orders_path
   end
