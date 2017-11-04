@@ -15,4 +15,14 @@ describe "As a registered user" do
 
     expect(page).to_not have_content("Cancelled")
   end
+
+  # scenario "I can not view any admin views" do
+  #   user_1 = create(:user)
+  #
+  #   allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
+  #
+  #   visit '/admin/dashboard'
+  #
+  #   expect(page).to have_http_status(404)
+  # end
 end

@@ -33,5 +33,7 @@ end
     expect(page).to have_content("Logged in as Emily")
     expect(page).to have_content("Logout")
     expect(page).to_not have_content("Login")
+    expect(User.last.role).to eq("default")
+    expect(User.last.role).to_not eq("admin")
   end
 end
