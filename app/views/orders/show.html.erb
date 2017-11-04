@@ -7,15 +7,48 @@
 <% end  %>
 
 <div>
-  <% @order.grouped_freelancers.each do |id, quantity| %>
-
-Name: <%= @freelancers.find(id).name %>
-<%= @freelancers.find(id).price %>
-Quantity: <%= quantity %> hour
-Subtotal: <%= number_to_currency(@order.subtotal(id, quantity)) %>
-<%= link_to "View Freelancer", freelancer_path(@freelancers.find(id)) %>
-<br/>
-<% end %>
+  <table class="table table-striped table-hovered">
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Quantity
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Subtotal
+        </th>
+        <th>
+          Freelance Details
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.grouped_freelancers.each do |id, quantity| %>
+      <tr>
+        <td>
+          <%= @freelancers.find(id).name %>
+        </td>
+        <td>
+          <td>
+            <%= quantity %> hour
+          </td>
+          <%= @freelancers.find(id).price %>
+        </td>
+        <td>
+          <%= number_to_currency(@order.subtotal(id, quantity)) %>
+        </td>
+        <td>
+          <%= link_to "View Freelancer", freelancer_path(@freelancers.find(id)) %>
+        </td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
 </div>
 
 
