@@ -21,7 +21,8 @@ describe "As a user when I have freelancers in my cart" do
     scenario "I see the order details in a table" do
       click_button "Checkout"
 
-      expect(page).to have_content("Order: 1")
+
+      expect(page).to have_content(1)
       expect(page).to have_content("Ordered")
     end
   end

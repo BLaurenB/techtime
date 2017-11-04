@@ -19,8 +19,8 @@ describe "When I visit an order" do
       expect(page).to have_content("Date: #{order.created_at}")
 
       expect(page).to have_content("Name")
-      expect(page).to have_content("Quantity: 1 hour")
-      expect(page).to have_content("Subtotal: $150")
+      expect(page).to have_content("1 hour")
+      expect(page).to have_content("$150")
       expect(page).to have_content("Total: $450")
       expect(page).to_not have_content("Updated on:")
 
@@ -37,7 +37,7 @@ describe "When I visit an order" do
       order.freelancers << freelancer_1
 
       visit order_path(order)
-      # save_and_open_page
+      
 
       expect(page).to have_content("Completed")
       expect(page).to have_content("Date: #{order.created_at}")
