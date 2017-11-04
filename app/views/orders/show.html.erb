@@ -10,6 +10,7 @@ Name: <%= @freelancers.find(id).name %>
 <%= @freelancers.find(id).price %>
 Quantity: <%= quantity %> hour
 Subtotal: <%= number_to_currency(@order.subtotal(id, quantity)) %>
+<%= link_to "View Freelancer", freelancer_path(@freelancers.find(id)) %>
 <br/>
 <% end %>
 </div>

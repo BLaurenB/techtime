@@ -15,7 +15,7 @@ describe "When I visit an order" do
     # require 'pry'; binding.pry
 
       visit order_path(order)
-      save_and_open_page
+      # save_and_open_page
 
       expect(page).to have_content("Paid")
       expect(page).to have_content("Date: #{order.created_at}")
@@ -27,7 +27,8 @@ describe "When I visit an order" do
       expect(page).to have_content("Subtotal: $150")
       expect(page).to have_content("Total: $450")
 
-      click_link "View Freelancer"
+
+      first(:link, "View Freelancer").click
       expect(current_path).to eq(freelancer_path(freelancer_1))
     end
 
