@@ -17,9 +17,20 @@ describe "When I visit an order" do
       visit order_path(order)
       save_and_open_page
 
+      expect(page).to have_content("Paid")
+      expect(page).to have_content("Date: #{order.created_at}")
+
+
+
       expect(page).to have_content("Name")
       expect(page).to have_content("Quantity: 1 hour")
       expect(page).to have_content("Subtotal: $150")
+      expect(page).to have_content("Total: $450")
+
+      click_link "View Freelancer"
+      expect(current_path).to eq(freelancer_path(freelancer_1))
     end
+
+
   end
 end
