@@ -1,1 +1,12 @@
+<h1>Order: <%=@order.id%></h1>
 
+<div>
+  <% @order.grouped_freelancers.each do |id, quantity| %>
+
+Name: <%= @freelancers.find(id).name %>
+<%= @freelancers.find(id).price %>
+Quantity: <%= quantity %> hour
+Subtotal: <%= number_to_currency(quantity * @freelancers.find(id).price) %>
+<br/>
+<% end %>
+</div>

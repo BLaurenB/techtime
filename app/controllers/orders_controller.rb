@@ -5,6 +5,7 @@ class OrdersController < ApplicationController
 
   def show
     @order = Order.find(params[:id])
+    @freelancers = @order.freelancers
   end
 
 end

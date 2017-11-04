@@ -14,4 +14,10 @@ class Order < ApplicationRecord
   # def quantity_of_freelancer(id)
 
   # we're not sure how to pass this info to the view since we're thinking about doing @order.freelancers.each do |freelancer| to be able to access the freelancer information (name, price)
+
+  def grouped_freelancers
+    freelancers.group(:id).count
+  end
+
+
 end
