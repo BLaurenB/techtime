@@ -7,18 +7,18 @@ describe "When I visit Orders" do
       user_2 = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
-      user_1.orders.create!(status: "ordered")
-      user_1.orders.create!(status: "paid")
-      user_1.orders.create!(status: "completed")
-      user_2.orders.create!(status: "cancelled")
+      user_1.orders.create!
+      user_1.orders.create!(status: 1)
+      user_1.orders.create!(status: 3)
+      user_2.orders.create!(status: 2)
 
       visit orders_path
 
 
-      expect(page).to have_content("ordered")
-      expect(page).to have_content("paid")
-      expect(page).to have_content("completed")
-      expect(page).to_not have_content("cancelled")
+      expect(page).to have_content("Ordered")
+      expect(page).to have_content("Paid")
+      expect(page).to have_content("Completed")
+      expect(page).to_not have_content("Cancelled")
 
     end
 
@@ -26,9 +26,13 @@ describe "When I visit Orders" do
       user_1 = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user_1)
 
-      order = user_1.orders.create!(status: "ordered")
+      freelancer_1 = create(:freelancer)
+      order = user_1.orders.create
+      order.freelancers << freelancer_1
 
       visit orders_path
+    
+
 
       click_on "View Details"
 

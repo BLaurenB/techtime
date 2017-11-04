@@ -3,6 +3,7 @@ class Order < ApplicationRecord
   has_many :order_freelancers
   has_many :freelancers, through: :order_freelancers
 
+  enum status: ["Ordered", "Paid", "Cancelled", "Completed"]
 
   def grouped_freelancers
     freelancers.group(:id).count
@@ -12,12 +13,18 @@ class Order < ApplicationRecord
     quantity * freelancers.find(id).price
   end
 
-
   def total
     grouped_freelancers.map do |id, quantity|
       quantity * freelancers.find(id).price
     end.sum
   end
 
-
+  def create_orders(cart_contents)
+    cart_contents.each do |freelancer_id, quantity|
+      freelancer = Freelancer.find(freelancer_id.to_i)
+      quantity.to_i.times do
+        self.freelancers << freelancer
+      end
+    end
+  end
 end

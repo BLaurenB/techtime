@@ -37,7 +37,7 @@ describe "When I visit an order" do
       order.freelancers << freelancer_1
 
       visit order_path(order)
-       save_and_open_page
+      
 
       expect(page).to have_content("Completed")
       expect(page).to have_content("Date: #{order.created_at}")
