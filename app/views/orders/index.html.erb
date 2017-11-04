@@ -3,5 +3,6 @@
   <div>
     <p><%=order.id %> </p>
     <p><%=order.status %> </p>
+    <p><%= link_to "View Details", order_path(order) %> </p>
   </div>
   <%end %>
