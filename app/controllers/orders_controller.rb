@@ -10,7 +10,7 @@ class OrdersController < ApplicationController
 
   def create
     @user = current_user
-    order = @user.orders.create(status: "ordered")
+    order = @user.orders.create
     params[:cart_contents].each do |freelancer_id, quantity|
       freelancer = Freelancer.find(freelancer_id.to_i)
       quantity.to_i.times do

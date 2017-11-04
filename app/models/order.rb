@@ -3,7 +3,8 @@ class Order < ApplicationRecord
   has_many :order_freelancers
   has_many :freelancers, through: :order_freelancers
 
-
+  enum status: ["Ordered", "Paid", "Cancelled", "Completed"]
+  
   def grouped_freelancers
     freelancers.group(:id).count
   end
