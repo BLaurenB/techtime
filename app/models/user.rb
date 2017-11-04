@@ -4,4 +4,5 @@ class User < ApplicationRecord
   validates :email, :company, :address1, :city, :state, :zip, presence: true
 
   enum role: ["default", "admin"]
+  has_many :orders
 end

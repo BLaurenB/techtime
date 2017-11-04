@@ -1,0 +1,8 @@
+<h1><%=@user.username%> Here are your Orders</h1>
+<%@user.orders.each do |order| %>
+  <div>
+    <p><%=order.id %> </p>
+    <p><%=order.status %> </p>
+    <p><%= link_to "View Details", order_path(order) %> </p>
+  </div>
+  <%end %>
