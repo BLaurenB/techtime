@@ -8,4 +8,9 @@ class OrdersController < ApplicationController
     @freelancers = @order.freelancers
   end
 
+  def create
+
+    flash[:success] = "Order was successfully placed!"
+    redirect_to orders_path
+  end
 end
