@@ -2,6 +2,9 @@
 
 <div>Date: <%= @order.created_at %></div>
 <div>Status: <%= @order.status %></div>
+<% if @order.status == ("Completed" || "Cancelled") %>
+<div>Updated on: <%= @order.updated_at %></div>
+<% end  %>
 
 <div>
   <% @order.grouped_freelancers.each do |id, quantity| %>
