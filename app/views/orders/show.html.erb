@@ -5,9 +5,8 @@
 <% if @order.status == ("Completed" || "Cancelled") %>
 <div>Updated on: <%= @order.updated_at %></div>
 <% end  %>
-
 <div>
-  <table class="table table-striped table-hovered">
+  <table class="table table-striped">
     <thead>
       <tr>
         <th>
@@ -50,6 +49,5 @@
     </tbody>
   </table>
 </div>
-
 
 <div>Total: <%= number_to_currency(@order.total) %></div>
