@@ -5,9 +5,24 @@
   <%= image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
   <h3>Name: <%= freelancer.name %></h3>
   <p><%= freelancer.description %></p>
+  <p>Quantity: <%= @cart.count_of(freelancer.id)%></p>
+  <%= button_to "Add an hour", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
+  <%= button_to "Remove an hour", cart_path(freelancer_id: freelancer.id), class: "btn btn-danger", method: :patch%>
   <p>$<%= freelancer.price %>/hr</p>
+  <p> Subtotal: $<%= @cart.subtotal(freelancer) %></p>
+  <%= link_to "Remove #{freelancer.name}'s time from your cart.", cart_index_path(freelancer_id: freelancer.id), method: :delete %>
+
 </div>
 <% end %>
 <div>
-  <h2>Total: <%= @cart.total_price %></h2>
+  <h2>Total: $<%= @cart.total_price %></h2>
 </div>
+<% if current_user.nil? %>
+  <div class="login-to-checkout">
+    <%= link_to "Login or Create Account to Checkout", login_path %>
+  </div>
+<% else %>
+  <div class="checkout">
+    <% button_to "Checkout", "#" %>
+  </div>
+<% end %>

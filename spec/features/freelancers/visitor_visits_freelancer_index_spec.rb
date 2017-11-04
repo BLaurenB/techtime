@@ -13,8 +13,7 @@ describe "As a Visitor" do
       expect(page).to have_content(freelancer[2].description)
       expect(page).to have_content(freelancer[0].price)
       expect(page).to have_content(freelancer[2].price)
-      expect(page).to have_css("#image_1")
-      expect(page).to have_css("#image_3")
+      expect(page).to have_css("img[src*='pexels-photo-415829.jpeg']")
     end
   end
 end

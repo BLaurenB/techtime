@@ -1,11 +1,17 @@
 <h1>Browse our Techies</h1>
 
-<% @freelancers.each do |freelancer| %>
-<div>
-  <%= image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
-  <h3>Name: <%= freelancer.name %></h3>
-  <p><%= freelancer.description %></p>
-  <p>$<%= freelancer.price %>/hr</p>
-  <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
+<div class="card-deck d-flex justify-content-between">
+  <% @freelancers.in_groups_of(3, false).each do |group| %>
+  <div class="row d-flex justify-content-around">
+    <% group.each do |freelancer| %>
+    <div class="card col-3 d-flex text-center">
+      <img class="card-img-top" src="<%=freelancer.image%>" alt="Card image cap">
+      <h4 class="card-title">Name: <%=freelancer.name%></h4>
+      <p class="card-text"><%=freelancer.description%></p>
+      <p class="card-text"><%=freelancer.price%>/hr</p>
+      <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
 </div>
-<% end %>
