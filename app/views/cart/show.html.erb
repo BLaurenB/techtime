@@ -1,20 +1,18 @@
 <h1>Current Cart</h1>
 
 <% @cart.collect_freelancers.each do |freelancer| %>
-<div>
+<ul class="list-group">
   <%= image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
   <h3>Name: <%= freelancer.name %></h3>
-  <p><%= freelancer.description %></p>
-  <p>Quantity: <%= @cart.count_of(freelancer.id)%></p>
+  <li class="list-group-item"><%= freelancer.description %></li>
+  <li class="list-group-item">Quantity: <%= @cart.count_of(freelancer.id)%></li>
   <%= button_to "Add an hour", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger"%>
   <%= button_to "Remove an hour", cart_path(freelancer_id: freelancer.id), class: "btn btn-danger", method: :patch%>
-  <p>$<%= freelancer.price %>/hr</p>
-  <p> Subtotal: $<%= @cart.subtotal(freelancer) %></p>
+  <li class="list-group-item">$<%= freelancer.price %>/hr</li>
+  <li class="list-group-item"> Subtotal: $<%= @cart.subtotal(freelancer) %></li>
   <%= link_to "Remove #{freelancer.name}'s time from your cart.", cart_index_path(freelancer_id: freelancer.id), method: :delete %>
-
-</div>
 <% end %>
-<div>
+</ul>
   <h2>Total: $<%= @cart.total_price %></h2>
 </div>
 <% if current_user.nil? %>
@@ -23,6 +21,6 @@
   </div>
 <% else %>
   <div class="checkout">
-    <% button_to "Checkout", "#" %>
+    <%= button_to "Checkout", orders_path(cart_contents: @cart.contents) %>
   </div>
 <% end %>

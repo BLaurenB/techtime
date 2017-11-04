@@ -1,11 +1,13 @@
 <h1><%=@category.title %></h1>
 
+
+
   <%@category.freelancers.each do |freelancer| %>
-    <div>
+
     <%= image_tag(freelancer.image, size: "50x50", class: "image-fl-index", id: "image_#{freelancer.id}") %>
-     <h3>Name: <%= freelancer.name %></h3>
-     <p><%= freelancer.description %></p>
-     <p>$<%= freelancer.price %>/hr</p>
-     <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger btn-sm"%>
-   </div>
+     <h4>Name: <%= freelancer.name %></h4>
+      <li class="list-group-item"><%= freelancer.description%></li>
+      <li class="list-group-item">$<%= freelancer.price %>/hr</li>
+      <li class="list-group-item"> <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger btn-sm"%></li>
     <% end %>
+  </ul>
