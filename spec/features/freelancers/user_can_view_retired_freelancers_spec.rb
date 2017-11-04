@@ -5,6 +5,7 @@ describe "When I visit a freelancer page" do
 
       freelancer = create(:freelancer, status: "retired")
 
+
       visit freelancer_path(freelancer)
 
       expect(page).to have_content("Freelancer Retired")
@@ -17,8 +18,9 @@ describe "When I visit a freelancer page" do
       freelancer = create(:freelancer)
 
       visit freelancer_path(freelancer)
+      
 
-      expect(page).to have_content("Choose Me!")
+      expect(page).to have_button("Choose Me!")
       expect(page).to_not have_content("Freelancer Retired")
     end
   end
