@@ -28,7 +28,7 @@
     </div>
     <div class="nav-item">
       <% if current_user && current_user.admin? %>
-      <a class="nav-link" href="/edit_admin_user_path(current_user)">My Account</a>
+      <%= link_to "My Account", edit_admin_user_path(current_user), class: "nav-link" %>
       <% end %>
     </div>
     <div class="nav-item">
