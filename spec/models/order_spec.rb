@@ -31,7 +31,7 @@ describe Order do
       expect(order.status).to eq("Cancelled")
       expect(order.Cancelled?).to be_truthy
     end
-    
+
     it "can be completed" do
       order = build(:order, status: 3)
 

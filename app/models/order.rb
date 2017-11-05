@@ -27,4 +27,22 @@ class Order < ApplicationRecord
       end
     end
   end
+
+
+  def self.total_ordered
+    where(status: 0).count
+  end
+
+  def self.total_paid
+    where(status: 1).count
+  end
+
+  def self.total_canceled
+    where(status: 2).count
+  end
+  
+  def self.total_completed
+    where(status: 3).count
+  end
+
 end
