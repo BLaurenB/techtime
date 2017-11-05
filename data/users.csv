@@ -1,4 +1,4 @@
-Username,Password,email,company,Address1,address2,city,state,Zip,Role
+username,password,email,company,address1,address2,city,state,zip,role
 BobPlumbing,password,bob@gmail.com,Plumbing Store,1234 Happy Lane,,Louisville,TN,37777,0
 HappyFeet1,password,happyfeet20@hotmail.com,Happy Feet Shoe Store,2224 Sad Street,,Denver,CO,37891,0
 Janet456,password,janet@hotmail.com,Janet’s Tech Nail Salon,305 Main Street,,New York,NY,74649,0
