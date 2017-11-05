@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :cart, only: [:create]
   resources :freelancers, only: [:index, :show]
   resources :categories, only: [:index, :show]
-  resources :users, only: [:new, :create]
+  resources :users, only: [:new, :create, :show]
   resources :orders, only: [:index, :show, :create]
 
   namespace :admin do

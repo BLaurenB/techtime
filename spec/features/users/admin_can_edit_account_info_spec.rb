@@ -8,7 +8,7 @@ describe "When I try to edit my account info" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit '/'
-      click_on "My Account"
+      click_on "Edit My Account"
 
       expect(current_path).to eq(edit_admin_user_path(admin))
 
@@ -27,21 +27,22 @@ describe "When I try to edit my account info" do
       expect(page).to have_content("Zoey")
     end
 
-    xscenario "I can not edit any other user's information" do
+    scenario "I can not edit any other user's information" do
+      user_1 = create(:user)
       admin = create(:user, role: 1)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
-      user = create(:user)
 
-      visit user_path(user)
+      visit admin_user_path(user_1)
 
-      expect(page).to have_content(user.username)
-      expect(page).to have_content(user.address1)
-      expect(page).to have_content(user.company)
-      expect(page).to have_content(user.email)
-      expect(page).to have_content(user.city)
-      expect(page).to have_content(user.state)
-      expect(page).to have_content(user.zip)
+
+      expect(page).to have_content(user_1.username)
+      expect(page).to have_content(user_1.address1)
+      expect(page).to have_content(user_1.company)
+      expect(page).to have_content(user_1.email)
+      expect(page).to have_content(user_1.city)
+      expect(page).to have_content(user_1.state)
+      expect(page).to have_content(user_1.zip)
       expect(page).to_not have_content("Update Account")
     end
   end
