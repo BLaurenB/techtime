@@ -1,7 +1,8 @@
 require "rails_helper"
 
-describe " As an Admin," do
-  scenario "when I log in, I am taken to an admin dashboard" do
+describe "When I login" do
+  describe "As an Admin" do
+  scenario "I am taken to an admin dashboard" do
     admin = create(:user, role: 1)
 
     visit '/login'
@@ -21,5 +22,25 @@ describe " As an Admin," do
 
     expect(page).to have_content("Admin Dashboard")
   end
+end
 
+  describe "As a regular user" do
+    scenario "I cannot access the Admin Dashboard" do
+      user = create(:user)
+
+      visit '/admin/dashboard'
+
+      expect(page).to have_content(404)
+    end
+  end
+
+  describe "As a visitor" do
+    scenario "I cannot access the Admin Dashboard" do
+
+
+      visit '/admin/dashboard'
+
+      expect(page).to have_content(404)
+    end
+  end
 end
