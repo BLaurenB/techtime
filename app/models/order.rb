@@ -40,9 +40,13 @@ class Order < ApplicationRecord
   def self.total_canceled
     where(status: 2).count
   end
-  
+
   def self.total_completed
     where(status: 3).count
+  end
+
+  def self.filter_by(status_params)
+    where(status: status_params)
   end
 
 end

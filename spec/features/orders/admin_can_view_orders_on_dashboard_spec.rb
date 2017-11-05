@@ -14,8 +14,6 @@ describe "As an admin" do
     end
 
     scenario "I see a list of all orders" do
-
-      save_and_open_page
       expect(page).to have_content(@order_1.id)
       expect(page).to have_content(@order_1.status)
       expect(page).to have_content(@order_4.id)
@@ -28,10 +26,14 @@ describe "As an admin" do
       expect(page).to have_content("Canceled: 1")
       expect(page).to have_content("Completed: 1")
     end
+
+    scenario "I can see a link for each individual order" do
+      expect(page).to have_link("View Order 1")
+      expect(page).to have_link("View Order 4")
+
+      click_on "View Order 1"
+      expect(current_path).to eq(order_path(@order_1))
+
+    end
   end
 end
-
-# As an Admin When I visit the dashboard
-# Then I can see a listing of all orders
-# And I can see the total number of orders for each status (“Ordered”, “Paid”, “Cancelled”, “Completed”)
-# And I can see a link for each individual order

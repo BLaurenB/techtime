@@ -5,10 +5,17 @@ Completed: <%= @orders.total_completed %>
 Canceled: <%= @orders.total_canceled %>
 <br/>
 
-
-
-<% @orders.each do |order| %>
-Order Id:<%= order.id %> </br>
-Order Status:<%= order.status %>
-</br>
-<% end %>
+  <h2>Filter by</h2>
+  <%= link_to "Ordered", admin_dashboard_path(filter_by: 0) %>
+  <%= link_to "Paid", admin_dashboard_path(filter_by: 1) %>
+  <%= link_to "Canceled", admin_dashboard_path(filter_by: 2) %>
+  <%= link_to "Completed", admin_dashboard_path(filter_by: 3) %>
+  <br/>
+<div class="filtered-orders">
+  <% @orders.each do |order| %>
+  Order Id:<%= order.id %> 
+  Order Status:<%= order.status %>
+  <%= link_to "View Order #{order.id}", order_path(order) %>
+  </br>
+  <% end %>
+</div>

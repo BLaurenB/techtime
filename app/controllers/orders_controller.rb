@@ -15,4 +15,7 @@ class OrdersController < ApplicationController
     flash[:success] = "Order was successfully placed!"
     redirect_to orders_path
   end
+
+
+
 end
