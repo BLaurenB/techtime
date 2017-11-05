@@ -1,6 +1,14 @@
 <h1>Admin Dashboard</h1>
+Ordered: <%= @orders.total_ordered %>
+Paid: <%= @orders.total_paid %>
+Completed: <%= @orders.total_completed %>
+Canceled: <%= @orders.total_canceled %>
+<br/>
+
+
 
 <% @orders.each do |order| %>
-<%= order.id %>
-<%= order.status %>
+Order Id:<%= order.id %> </br>
+Order Status:<%= order.status %>
+</br>
 <% end %>
