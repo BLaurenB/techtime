@@ -15,7 +15,7 @@ CSV.parse(users_csv, headers: true, header_converters: :symbol).each do |row|
     u.save
     puts "User #{u.username} saved"
 end
-puts "There are now #{User.count} rows in the users table."
+puts "#{User.count} rows for users table."
 
 categories_csv = File.read(Rails.root.join('data', 'seeds', 'categories.csv'))
 CSV.parse(categories_csv, headers: true, header_converters: :symbol).each do |row|
@@ -25,7 +25,7 @@ CSV.parse(categories_csv, headers: true, header_converters: :symbol).each do |ro
     puts "Category #{c.title} saved"
 end
 
-puts "There are now #{Category.count} rows in the categories table."
+puts "#{Category.count} rows for categories table."
 
 freelancers_csv = File.read(Rails.root.join('data', 'seeds', 'freelancers.csv'))
 CSV.parse(freelancers_csv, headers: true, header_converters: :symbol).each do |row|
@@ -40,7 +40,7 @@ CSV.parse(freelancers_csv, headers: true, header_converters: :symbol).each do |r
     puts "Freelancer #{f.name} saved"
 end
 
-puts "There are now #{Freelancer.count} rows in the freelancers table."
+puts "#{Freelancer.count} rows for freelancers table."
 
 
 orders_csv = File.read(Rails.root.join('data', 'seeds', 'orders.csv'))
@@ -52,7 +52,7 @@ CSV.parse(orders_csv, headers: true, header_converters: :symbol).each do |row|
     puts "Order #{o.id} saved"
 end
 
-puts "There are now #{Order.count} rows in the orders table."
+puts "#{Order.count} rows for orders table."
 
 order_freelancers_csv = File.read(Rails.root.join('data', 'seeds', 'orders_freelancers.csv'))
 CSV.parse(order_freelancers_csv, headers: true, header_converters: :symbol).each do |row|
@@ -63,4 +63,4 @@ CSV.parse(order_freelancers_csv, headers: true, header_converters: :symbol).each
     puts "OrderFreelancer #{of.id} saved"
 end
 
-puts "There are now #{Order.count} rows in the orders table."
+puts "#{OrderFreelancer.count} rows for order_freelancers table."
