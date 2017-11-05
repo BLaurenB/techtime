@@ -1,0 +1,9 @@
+Username,Password,email,company,Address1,address2,city,state,Zip,Role
+BobPlumbing,password,bob@gmail.com,Plumbing Store,1234 Happy Lane,,Louisville,TN,37777,0
+HappyFeet1,password,happyfeet20@hotmail.com,Happy Feet Shoe Store,2224 Sad Street,,Denver,CO,37891,0
+Janet456,password,janet@hotmail.com,Janet’s Tech Nail Salon,305 Main Street,,New York,NY,74649,0
+Sleepyhead230,password,sleepyhead@gamil.com,Onesies for Every Occasion ,340 Read Lane,,Memphis,TN,34575,0
+ZoeyPuppy,password,zoe@gmail.com,Puppy Love,50 Red Avenue,,Nashville,TN,38791,0
+admin,password,techtime@gmail.com,Techtime,300 First Avenue,,Denver,CO,80211,1
+RollTide,password,rolltide@gmail.com,Bama,200 Second Avenue,,Mobile,AL,57380,0
+Jazzhands,password,jazzie@hotmail,JazzHands Unlimited,4040 Music Circle,,San Diego,CA,39201,0
