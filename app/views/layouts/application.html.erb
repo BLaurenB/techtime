@@ -19,13 +19,18 @@
     <div class="nav-item">
       <a class="nav-link" href="/freelancers">Freelancers</a>
     </div>
-      <div class="nav-item">
-        <% if current_user.nil? %>
-        <a class="nav-link" href="/login">Login</a>
-        <% else %>
-        <a class="nav-link" href="/logout">Logout</a>
-        <% end %>
-      </div>
+    <div class="nav-item">
+      <% if current_user.nil? %>
+      <a class="nav-link" href="/login">Login</a>
+      <% else %>
+      <a class="nav-link" href="/logout">Logout</a>
+      <% end %>
+    </div>
+    <div class="nav-item">
+      <% if current_user && current_user.admin? %>
+      <a class="nav-link" href="/edit_admin_user_path(current_user)">My Account</a>
+      <% end %>
+    </div>
     <div class="nav-item">
       <p>Cart: <%= @cart.total_count %></p>
     </div>
