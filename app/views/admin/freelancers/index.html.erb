@@ -1,0 +1,20 @@
+<h1>Browse our Techies  </h1>
+ <div>
+   <%= link_to "Add a New Freelancer", new_admin_freelancer_path, class: "nav-link" %>
+ </div>
+
+<div class="card-deck d-flex justify-content-between">
+  <% @freelancers.in_groups_of(3, false).each do |group| %>
+  <div class="row d-flex justify-content-around">
+    <% group.each do |freelancer| %>
+    <div class="card col-3 d-flex text-center">
+      <img class="card-img-top" src="<%=freelancer.image%>" alt="Card image cap">
+      <h4 class="card-title">Name: <%=freelancer.name%></h4>
+      <p class="card-text"><%=freelancer.description%></p>
+      <p class="card-text"><%=freelancer.price%>/hr</p>
+      <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+    </div>
+    <% end %>
+    <% end %>
+  </div>
+</div>
