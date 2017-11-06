@@ -1,4 +1,10 @@
 <h1>Browse our Techies</h1>
+<% if current_user && current_user.admin? %>
+<div>
+ <%= link_to "Add a New Freelancer", new_admin_freelancer_path, class: "nav-link" %>
+</div>
+<% end %>
+
 
 
 <div class="card-deck d-flex justify-content-between">

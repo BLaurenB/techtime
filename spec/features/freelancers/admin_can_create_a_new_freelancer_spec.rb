@@ -11,8 +11,8 @@ require 'rails_helper'
     describe "When I visit the Freelancer page" do
       scenario "I see a link to create a new freelancer" do
 
-        visit admin_freelancers_path
-        save_and_open_page
+        visit freelancers_path
+
 
 
 
@@ -26,7 +26,7 @@ require 'rails_helper'
 
     scenario "I can create a new freelancer" do
 
-      visit admin_freelancers_path
+      visit freelancers_path
 
       click_on 'Add a New Freelancer'
 
@@ -37,7 +37,7 @@ require 'rails_helper'
 
       click_button 'Create Freelancer Profile'
 
-      save_and_open_page
+
 
       expect(current_path).to eq(freelancer_path(Freelancer.last.id))
       expect(page).to have_content("Emily")
