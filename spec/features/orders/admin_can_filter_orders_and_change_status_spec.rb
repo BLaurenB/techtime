@@ -34,10 +34,11 @@ describe "As an Admin" do
         click_on "Cancel"
       end
 
+      expect(current_path).to eq(admin_dashboard_path)
       expect(page).to have_content("Ordered: 1")
 
       within ".order-1" do
-        expect(page).to have_content("Status: Canceled")
+        expect(page).to have_content("Status: Cancelled")
       end
     end
 

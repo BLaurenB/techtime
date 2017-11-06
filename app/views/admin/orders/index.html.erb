@@ -11,11 +11,16 @@ Canceled: <%= @orders.total_canceled %>
   <%= link_to "Canceled", admin_dashboard_path(filter_by: 2) %>
   <%= link_to "Completed", admin_dashboard_path(filter_by: 3) %>
   <br/>
-<div class="filtered-orders">
-  <% @orders.each do |order| %>
-  Order Id:<%= order.id %>
-  Order Status:<%= order.status %>
-  <%= link_to "View Order #{order.id}", order_path(order) %>
+  <div class="filtered-orders">
+    <% @orders.each do |order| %>
+    <div class="order-<%="#{order.id}"%>">
+      Order Id:<%= order.id %>
+      Order Status: <%= order.status %>
+      <% if order.status == ("Ordered" || "Paid") %>
+      <%= link_to "Cancel", admin_dashboard_path(order_id: order.id, status: 'Cancelled'), method: :patch %>
+      <% end %>
+      <%= link_to "View Order #{order.id}", order_path(order) %>
+    </div>
   </br>
   <% end %>
 </div>

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
     resources :users, only: [:edit, :update, :show]
     resources :freelancers, only: [:new, :create, :index]
     get '/dashboard', to: 'orders#index'
+    patch '/dashboard', to: 'orders#update'
   end
 
   get '/login', to: 'sessions#new'
