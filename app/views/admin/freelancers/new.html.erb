@@ -1,0 +1,37 @@
+<div class="form-outline">
+  <%=form_for [:admin, @freelancer] do |f| %>
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :name, class: 'new-account-label'%>
+      <%= f.text_field :name, class: 'new-account-box'%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :description, class: 'new-account-label'%>
+      <%= f.text_area :description, class: 'new-account-box'%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :price, class: 'new-account-label'%>
+      <%= f.text_field :price, class: 'new-account-box'%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :category, class: 'new-account-label'%>
+      <%= f.select :category, Category.all.pluck(:title) %>
+    </div>
+  </div>
+
+
+  <div class="new-account-item">
+    <%= f.submit "Create Freelancer Profile", class: "btn btn-primary create-button" %>
+  </div>
+  <% end %>
+</div>
+</div>

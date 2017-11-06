@@ -5,6 +5,7 @@ require 'rails_helper'
     before do
       admin = create(:user, role: 1)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
+      @category = Category.create(title: "Backend Development")
     end
 
     describe "When I visit the Freelancer page" do
@@ -29,11 +30,13 @@ require 'rails_helper'
       fill_in "freelancer[name]", with: "Emily"
       fill_in "freelancer[description]", with: "Backend Developer with 10 years of experience"
       fill_in "freelancer[price]", with: 200
-      fill_in "freelancer[category]", with: "Backend Development"
+      select('Backend Development', from: "freelancer_category")
 
       click_button 'Create Freelancer Profile'
 
-      expect(current_path).to eq(admin_freelancer_path(Freelancer.last.id))
+      save_and_open_page
+
+      expect(current_path).to eq(freelancer_path(Freelancer.last.id))
       expect(page).to have_content("Emily")
       expect(page).to have_content("Backend Developer with 10 years of experience")
       expect(page).to have_content("200.00")
