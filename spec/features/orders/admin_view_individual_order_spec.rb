@@ -5,16 +5,17 @@ describe "As an authenticated Admin user" do
   before do
     admin = create(:user, role: 1)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
-    user = create(:user)
+    @user = create(:user)
+        # byebug
 
     @freelancer_1 = create(:freelancer)
     @freelancer_2 = create(:freelancer)
 
-    @order = user.orders.create(status: "Paid")
+    @order = @user.orders.create(status: "Paid")
 
     2.times {@order.freelancers << @freelancer_2}
     @order.freelancers << @freelancer_1
-
+# binding.pry
     visit admin_order_path(@order)
   end
 
@@ -26,7 +27,7 @@ describe "As an authenticated Admin user" do
     end
 
     scenario " I can see the purchaser's full name and address" do
-      expect(page).to have_content("Name: FullName1")
+      expect(page).to have_content(@user.full_name)
       #need to update all the dependent pages like new, edit in addition to csv.
       expect(page).to have_content("Google")
       expect(page).to have_content("123 Fourth Street")

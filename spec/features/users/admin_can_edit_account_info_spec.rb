@@ -14,6 +14,7 @@ describe "When I try to edit my account info" do
 
       fill_in "user[username]", with: "Zoey"
       fill_in "user[email]", with: "wise@gmail.com"
+      fill_in "user[full_name]", with: "Emily Wise"
       fill_in "user[company]", with: "Google"
       fill_in "user[address1]", with: "Marshall's House"
       fill_in "user[address2]", with: "The Treehouse"
