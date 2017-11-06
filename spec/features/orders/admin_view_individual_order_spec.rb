@@ -41,12 +41,12 @@ describe "As an authenticated Admin user" do
   describe "I see for each Freelancer on the order" do
 
     scenario "the Freelancer's name and a link to their page" do
-      expect(page).to have_content("Freelancer Name 1")
-      click_on "View Freelancer"
+      expect(page).to have_content(@freelancer_1.name)
+      first(:link, "View Freelancer").click
       expect(current_path).to eq(freelancer_path(@freelancer_1))
     end
 
-    xscenario "I see the hours purchased, the price, subtotal, and total" do
+    scenario "I see the hours purchased, the price, subtotal, and total" do
       expect(page).to have_content("$150")
       expect(page).to have_content("$300")
       expect(page).to have_content("$450")

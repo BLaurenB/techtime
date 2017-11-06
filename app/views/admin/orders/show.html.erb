@@ -44,7 +44,8 @@
         </td>
         <td>
           <td>
-            <%= quantity %> hour
+            <%= pluralize(quantity, 'hour') %>
+
           </td>
           <%= @freelancers.find(id).price %>
         </td>
