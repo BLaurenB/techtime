@@ -12,6 +12,7 @@ CSV.parse(users_csv, headers: true, header_converters: :symbol).each do |row|
     u.city = row[:city]
     u.state = row[:state]
     u.zip = row[:zip]
+    u.role = row[:role].to_i
     u.save
     puts "User #{u.username} saved"
 end
