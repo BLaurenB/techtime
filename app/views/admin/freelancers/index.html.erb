@@ -1,10 +1,7 @@
-<h1>Browse our Techies</h1>
-
+<h1>Browse our Techies  </h1>
  <div>
    <%= link_to "Add a New Freelancer", new_admin_freelancer_path, class: "nav-link" %>
  </div>
-
-
 
 <div class="card-deck d-flex justify-content-between">
   <% @freelancers.in_groups_of(3, false).each do |group| %>
