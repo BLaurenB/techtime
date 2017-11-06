@@ -11,7 +11,9 @@ require 'rails_helper'
     describe "When I visit the Freelancer page" do
       scenario "I see a link to create a new freelancer" do
 
-        visit freelancers_path
+        visit admin_freelancers_path
+
+
 
         expect(page).to have_content("Add a New Freelancer")
 
@@ -23,7 +25,7 @@ require 'rails_helper'
 
     scenario "I can create a new freelancer" do
 
-      visit freelancers_path
+      visit admin_freelancers_path
 
       click_on 'Add a New Freelancer'
 
@@ -40,6 +42,6 @@ require 'rails_helper'
       expect(page).to have_content("Emily")
       expect(page).to have_content("Backend Developer with 10 years of experience")
       expect(page).to have_content("200/ hr")
-      
+
     end
   end
