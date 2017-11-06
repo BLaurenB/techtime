@@ -23,7 +23,7 @@ describe "As an admin" do
     scenario "I can see the total number of orders for each status" do
       expect(page).to have_content("Ordered: 2")
       expect(page).to have_content("Paid: 1")
-      expect(page).to have_content("Canceled: 1")
+      expect(page).to have_content("Cancelled: 1")
       expect(page).to have_content("Completed: 1")
     end
 

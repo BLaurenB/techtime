@@ -28,7 +28,7 @@ describe "When I visit an order" do
       expect(current_path).to eq(freelancer_path(freelancer_1))
     end
 
-    scenario "if the order is canceled or completed there is a different date shown" do
+    scenario "if the order is cancelled or completed there is a different date shown" do
       user = create(:user)
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(user)
 

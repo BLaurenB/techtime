@@ -2,13 +2,13 @@
 
 <div>Date: <%= @order.created_at %></div>
 
-<div class="">Purchaser: <%= @order.user.full_name %></div>
-<div><%= @order.user.company%></div>
-<div><%= @order.user.address1%></div>
-<div><%= @order.user.address2%></div>
-<div><%= @order.user.city%></div>
-<div><%= @order.user.state%></div>
-<div><%= @order.user.zip%></div>
+<div class=""><h2>Purchaser: <%= @order.user.full_name %></h2></div>
+<div><p><%= @order.user.company%></p></div>
+<div><p><%= @order.user.address1%></p></div>
+<div><p><%= @order.user.address2%></p></div>
+<div><p><%= @order.user.city%></p></div>
+<div><p><%= @order.user.state%></p></div>
+<div><p><%= @order.user.zip%></p></div>
 
 
 <div>Status: <%= @order.status %></div>
