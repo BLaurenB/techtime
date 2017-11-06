@@ -36,7 +36,7 @@
           <td>
             <%= quantity %> hour
           </td>
-          <%= @freelancers.find(id).price %>
+          <% @freelancers.find(id).price %>
         </td>
         <td>
           <%= number_to_currency(@order.subtotal(id, quantity)) %>

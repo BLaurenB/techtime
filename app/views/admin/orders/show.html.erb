@@ -13,8 +13,8 @@
 
 <div>Status: <%= @order.status %></div>
 <% if @order.status == ("Completed" || "Cancelled") %>
-<div>Updated on: <%= @order.updated_at %></div>
-<% end  %>
+<div>Updated on: <%= @order.updated_at %><%end%></div>
+
 <div>
   <table class="table table-striped">
     <thead>
@@ -47,7 +47,7 @@
             <%= pluralize(quantity, 'hour') %>
 
           </td>
-          <%= @freelancers.find(id).price %>
+          <% @freelancers.find(id).price %>
         </td>
         <td>
           <%= number_to_currency(@order.subtotal(id, quantity)) %>
