@@ -26,7 +26,7 @@ describe "As an Admin" do
       end
     end
 
-    scenario "I can change the status of an order" do
+    scenario "I can change the status of an order to cancelled" do
       expect(page).to have_content("Ordered: 2")
 
       within ".order-1" do
@@ -39,6 +39,23 @@ describe "As an Admin" do
 
       within ".order-1" do
         expect(page).to have_content("Status: Cancelled")
+      end
+    end
+
+    scenario "I can change the status of an order to paid" do
+      expect(page).to have_content("Ordered: 2")
+      expect(page).to have_content("Paid: 1")
+
+      within ".order-5" do
+        click_on "Mark as Paid"
+      end
+
+      expect(current_path).to eq(admin_dashboard_path)
+      expect(page).to have_content("Ordered: 1")
+      expect(page).to have_content("Paid: 2")
+
+      within ".order-5" do
+        expect(page).to have_content("Status: Paid")
       end
     end
 
