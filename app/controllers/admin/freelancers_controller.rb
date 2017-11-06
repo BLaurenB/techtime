@@ -3,7 +3,7 @@ class Admin::FreelancersController < Admin::BaseController
   def index
     @freelancers = Freelancer.all
   end
-    
+
   def new
     @freelancer = Freelancer.new
   end
@@ -25,7 +25,7 @@ class Admin::FreelancersController < Admin::BaseController
   private
 
   def freelancer_params
-    params.require(:freelancer).permit(:name, :description, :price)
+    params.require(:freelancer).permit(:name, :description, :price, :avatar)
   end
 
   def category_params

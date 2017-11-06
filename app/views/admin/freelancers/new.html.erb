@@ -1,5 +1,5 @@
 <div class="form-outline">
-  <%=form_for [:admin, @freelancer] do |f| %>
+  <%=form_for [:admin, @freelancer], html: { multipart: true } do |f| %>
   <div class="new-account-item">
     <div class="form-control account-input">
       <%= f.label :name, class: 'new-account-label'%>
@@ -25,6 +25,13 @@
     <div class="form-control account-input">
       <%= f.label :category, class: 'new-account-label'%>
       <%= f.select :category, Category.all.pluck(:title) %>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :avatar, class: 'new-account-label'%>
+      <%= f.file_field :category, Category.all.pluck(:title) %>
     </div>
   </div>
 
