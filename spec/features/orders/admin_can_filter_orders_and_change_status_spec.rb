@@ -22,7 +22,7 @@ describe "As an Admin" do
         expect(page).to have_content(@order_1.id)
         expect(page).to have_content(@order_5.id)
         expect(page).to_not have_content(@order_2.id)
-        expect(page).to_not have_content("Canceled")
+        expect(page).to_not have_content("Cancelled")
       end
     end
 

@@ -37,7 +37,7 @@ class Order < ApplicationRecord
     where(status: 1).count
   end
 
-  def self.total_canceled
+  def self.total_cancelled
     where(status: 2).count
   end
 
