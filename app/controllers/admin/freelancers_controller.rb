@@ -1,11 +1,15 @@
 class Admin::FreelancersController < Admin::BaseController
 
+  def index
+    @freelancers = Freelancer.all
+  end
+    
   def new
     @freelancer = Freelancer.new
   end
 
   def create
-  
+
     @category= Category.find_by(title: category_params[:category])
     @freelancer = @category.freelancers.new(freelancer_params)
 
