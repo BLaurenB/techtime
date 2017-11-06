@@ -15,7 +15,7 @@ describe "As an authenticated Admin user" do
 
     2.times {@order.freelancers << @freelancer_2}
     @order.freelancers << @freelancer_1
-# binding.pry
+
     visit admin_order_path(@order)
   end
 
@@ -28,7 +28,6 @@ describe "As an authenticated Admin user" do
 
     scenario " I can see the purchaser's full name and address" do
       expect(page).to have_content(@user.full_name)
-      #need to update all the dependent pages like new, edit in addition to csv.
       expect(page).to have_content("Google")
       expect(page).to have_content("123 Fourth Street")
       expect(page).to have_content("Suite 5")
@@ -41,7 +40,7 @@ describe "As an authenticated Admin user" do
 
   describe "I see for each Freelancer on the order" do
 
-    xscenario "the Freelancer's name and a link to their page" do
+    scenario "the Freelancer's name and a link to their page" do
       expect(page).to have_content("Freelancer Name 1")
       click_on "View Freelancer"
       expect(current_path).to eq(freelancer_path(@freelancer_1))
