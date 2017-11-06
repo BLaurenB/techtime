@@ -53,7 +53,6 @@ ActiveRecord::Schema.define(version: 20171106210511) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
-    t.string "full_name"
     t.string "company"
     t.string "address1"
     t.string "address2"
@@ -62,7 +61,8 @@ ActiveRecord::Schema.define(version: 20171106210511) do
     t.integer "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role"
+    t.integer "role", default: 0
+    t.string "full_name"
   end
 
   add_foreign_key "freelancers", "categories"
