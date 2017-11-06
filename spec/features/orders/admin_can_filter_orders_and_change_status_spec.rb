@@ -17,7 +17,6 @@ describe "As an Admin" do
       click_on "Ordered"
 
       expect(current_path).to eq(admin_dashboard_path)
-      save_and_open_page
 
       within ".filtered-orders" do
         expect(page).to have_content(@order_1.id)
@@ -28,7 +27,18 @@ describe "As an Admin" do
     end
 
     scenario "I can change the status of an order" do
+      expect(page).to have_content("Ordered: 2")
 
+      within ".order-1" do
+        expect(page).to have_content("Status: Ordered")
+        click_on "Cancel"
+      end
+
+      expect(page).to have_content("Ordered: 1")
+
+      within ".order-1" do
+        expect(page).to have_content("Status: Canceled")
+      end
     end
 
   end

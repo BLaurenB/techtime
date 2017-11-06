@@ -13,7 +13,7 @@ Canceled: <%= @orders.total_canceled %>
   <br/>
 <div class="filtered-orders">
   <% @orders.each do |order| %>
-  Order Id:<%= order.id %> 
+  Order Id:<%= order.id %>
   Order Status:<%= order.status %>
   <%= link_to "View Order #{order.id}", order_path(order) %>
   </br>
