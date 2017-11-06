@@ -12,6 +12,7 @@ require 'rails_helper'
       scenario "I see a link to create a new freelancer" do
 
         visit admin_freelancers_path
+        save_and_open_page
 
 
 
