@@ -1,0 +1,60 @@
+<h1>Order: <%=@order.id%></h1>
+
+<div>Date: <%= @order.created_at %></div>
+
+<div class="">
+  
+</div>
+
+
+
+<div>Status: <%= @order.status %></div>
+<% if @order.status == ("Completed" || "Cancelled") %>
+<div>Updated on: <%= @order.updated_at %></div>
+<% end  %>
+<div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>
+          Name
+        </th>
+        <th>
+          Quantity
+        </th>
+        <th>
+          Price
+        </th>
+        <th>
+          Subtotal
+        </th>
+        <th>
+          Freelance Details
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @order.grouped_freelancers.each do |id, quantity| %>
+      <tr>
+        <td>
+          <%= @freelancers.find(id).name %>
+        </td>
+        <td>
+          <td>
+            <%= quantity %> hour
+          </td>
+          <%= @freelancers.find(id).price %>
+        </td>
+        <td>
+          <%= number_to_currency(@order.subtotal(id, quantity)) %>
+        </td>
+        <td>
+          <%= link_to "View Freelancer", freelancer_path(@freelancers.find(id)) %>
+        </td>
+      </tr>
+      <%end%>
+    </tbody>
+  </table>
+</div>
+
+<div>Total: <%= number_to_currency(@order.total) %></div>

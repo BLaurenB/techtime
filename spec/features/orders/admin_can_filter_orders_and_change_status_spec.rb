@@ -17,7 +17,6 @@ describe "As an Admin" do
       click_on "Ordered"
 
       expect(current_path).to eq(admin_dashboard_path)
-      save_and_open_page
 
       within ".filtered-orders" do
         expect(page).to have_content(@order_1.id)

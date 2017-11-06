@@ -6,6 +6,7 @@ class UsersController < ApplicationController
 
   def create
     @user = User.new(user_params)
+    @user.role = 0
 
     if @user.save
       flash[:success] = "Logged in as #{@user.username}"
@@ -24,6 +25,6 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:username, :password, :email, :company, :address1, :address2, :city, :state, :zip)
+    params.require(:user).permit(:username, :password, :email, :full_name, :company, :address1, :address2, :city, :state, :zip)
   end
 end

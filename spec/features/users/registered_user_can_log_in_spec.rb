@@ -12,8 +12,7 @@ describe "As a registered user" do
 
     scenario "I can fill in my credentials" do
 
-      user = User.create(username: 'normaluser', password: 'password', email: "email@email.com", company: "Company", address1: "Address1", city: "Denver", state: "CO", zip:"80303", role: 0)
-      # allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(default)
+      user = User.create(username: 'normaluser', password: 'password', email: "email@email.com", full_name: "Bob Smith", company: "Company", address1: "Address1", city: "Denver", state: "CO", zip:"80303", role: 0)
 
       visit '/'
 
@@ -30,7 +29,7 @@ describe "As a registered user" do
       expect(page).to_not have_content("Login")
       expect(page).to have_content("Logout")
 
-    
+
     end
   end
 

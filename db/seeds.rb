@@ -6,12 +6,14 @@ CSV.parse(users_csv, headers: true, header_converters: :symbol).each do |row|
     u.username = row[:username]
     u.password = row[:password]
     u.email = row[:email]
+    u.full_name = row[:full_name]
     u.company = row[:company]
     u.address1 = row[:address1]
     u.address2 = row[:address2]
     u.city = row[:city]
     u.state = row[:state]
     u.zip = row[:zip]
+    u.role = row[:role]
     u.save
     puts "User #{u.username} saved"
 end
