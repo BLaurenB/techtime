@@ -26,6 +26,7 @@ describe "As an admin" do
     scenario "I should see a table with all the items(active and inactive)" do
 
       visit admin_freelancers_path
+    
 
       expect(page).to have_content(@freelancer_targeted.name)
       expect(page).to have_content(@freelancer_targeted.description)
@@ -35,5 +36,5 @@ describe "As an admin" do
       expect(page).to have_content(@freelancer_inactive.status)
       expect(page).to have_link("Edit")
     end
-  end    
+  end
 end
