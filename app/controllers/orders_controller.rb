@@ -3,7 +3,7 @@ class OrdersController < ApplicationController
 
 
   def index
-    @user = current_user #ok because we call @user.orders to show the orders. BUT users can still get to other pages.
+    @user = current_user
   end
 
   def show
