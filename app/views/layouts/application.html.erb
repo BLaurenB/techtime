@@ -17,7 +17,11 @@
         <a class="nav-link" href="/categories">Categories</a>
     </div>
     <div class="nav-item">
-      <a class="nav-link" href="/freelancers">Freelancers</a>
+        <% if current_user && current_user.admin? %>
+        <a class="nav-link" href="/admin/freelancers">Freelancers</a>
+        <% else %>
+        <a class="nav-link" href="/freelancers">Freelancers</a>
+        <% end %>
     </div>
     <div class="nav-item">
       <% if current_user.nil? %>
