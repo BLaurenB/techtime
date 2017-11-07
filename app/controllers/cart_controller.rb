@@ -20,7 +20,6 @@ class CartController < ApplicationController
     @cart.delete_freelancer(freelancer.id)
     session[:cart] = @cart.contents
 
-
     flash[:success] = "Successfully removed #{view_context.link_to "#{freelancer.name}", freelancer_path(freelancer)} from your cart."
     redirect_to cart_path
   end
