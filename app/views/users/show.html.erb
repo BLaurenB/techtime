@@ -1,1 +1,10 @@
 <h1>Welcome, <%= @user.username %>!</h1>
+
+<div class="profile">
+  <h2> <%= @user.full_name %></h2>
+  <p>Email: <%= @user.email %></p>
+  <p>Company: <%= @user.company %></p>
+  <p>Address: <%= @user.address1 %></p>
+  <p>Location: <%= @user.city %>, <%= @user.state %></p>
+  <p>Zip Code: <%= @user.zip %></p>
+</div>
