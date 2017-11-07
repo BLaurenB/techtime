@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20171106210511) do
+ActiveRecord::Schema.define(version: 20171107234018) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -31,6 +31,10 @@ ActiveRecord::Schema.define(version: 20171106210511) do
     t.datetime "updated_at", null: false
     t.bigint "category_id"
     t.integer "status", default: 0
+    t.string "avatar_file_name"
+    t.string "avatar_content_type"
+    t.integer "avatar_file_size"
+    t.datetime "avatar_updated_at"
     t.index ["category_id"], name: "index_freelancers_on_category_id"
   end
 
@@ -53,6 +57,7 @@ ActiveRecord::Schema.define(version: 20171106210511) do
     t.string "username"
     t.string "password_digest"
     t.string "email"
+    t.string "full_name"
     t.string "company"
     t.string "address1"
     t.string "address2"
@@ -61,8 +66,7 @@ ActiveRecord::Schema.define(version: 20171106210511) do
     t.integer "zip"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "role", default: 0
-    t.string "full_name"
+    t.integer "role"
   end
 
   add_foreign_key "freelancers", "categories"
