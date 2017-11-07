@@ -18,7 +18,6 @@ describe "As a visitor" do
       expect(current_path).to eq(cart_path)
 
       expect(page).to have_content("Successfully removed #{freelancer.name} from your cart.")
-      #check to see that it is styled in green message
       expect(page).to_not have_content("#{freelancer.price}/hr")
       expect(page).to have_content("Total: $0")
     end
@@ -33,7 +32,7 @@ describe "As a visitor" do
 
       click_link "Remove #{freelancer.name}'s time from your cart."
 
-      within(".remove") do
+      within(".success") do
         click_link  "#{freelancer.name}"
       end
 
