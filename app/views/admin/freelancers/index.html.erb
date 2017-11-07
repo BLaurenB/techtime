@@ -12,7 +12,8 @@
       <h4 class="card-title">Name: <%=freelancer.name%></h4>
       <p class="card-text"><%=freelancer.description%></p>
       <p class="card-text"><%=freelancer.price%>/hr</p>
-      <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+      <p class="card-text"><%=freelancer.status%>/hr</p>
+      <%= link_to "Edit", edit_admin_freelancer_path(freelancer)%>
     </div>
     <% end %>
     <% end %>
