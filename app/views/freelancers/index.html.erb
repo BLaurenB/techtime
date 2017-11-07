@@ -16,7 +16,11 @@
       <h4 class="card-title">Name: <%=freelancer.name%></h4>
       <p class="card-text"><%=freelancer.description%></p>
       <p class="card-text"><%=freelancer.price%>/hr</p>
-      <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+      <% if freelancer.active? %>
+        <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+      <% else %>
+        <p> Freelancer Retired </p>
+      <%end %>
     </div>
     <% end %>
     <% end %>

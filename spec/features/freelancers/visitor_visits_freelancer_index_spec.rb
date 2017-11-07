@@ -15,5 +15,14 @@ describe "As a Visitor" do
       expect(page).to have_content(freelancer[2].price)
       expect(page).to have_css("img[src*='pexels-photo-415829.jpeg']")
     end
+
+    scenario "I see retired freelancers and cannot add them to cart" do
+      create_list(:freelancer, 2)
+      create(:freelancer, status: "retired")
+
+      visit freelancers_path
+
+      expect(page).to have_content("Freelancer Retired", count: 1)
+    end
   end
 end
