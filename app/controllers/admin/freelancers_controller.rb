@@ -1,6 +1,8 @@
 class Admin::FreelancersController < Admin::BaseController
 
-
+  def index
+    @freelancers = Freelancer.all
+  end
 
   def new
     @freelancer = Freelancer.new
