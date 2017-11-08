@@ -9,8 +9,8 @@ Rails.application.routes.draw do
 
   namespace :admin do
     resources :users, only: [:edit, :update, :show]
-    resources :freelancers, only: [:new, :create]
-    
+    resources :freelancers, only: [:new, :create, :index, :edit, :update]
+
     resources :orders, only: [:show]
     get '/dashboard', to: 'orders#index'
     patch '/dashboard', to: 'orders#update'

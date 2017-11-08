@@ -8,7 +8,7 @@ describe "When I try to edit my account info" do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
 
       visit '/'
-      click_on "Edit My Account"
+      click_on "My Account"
 
       expect(current_path).to eq(edit_admin_user_path(admin))
 

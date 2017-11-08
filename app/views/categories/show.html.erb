@@ -1,13 +1,21 @@
 <h1><%=@category.title %></h1>
 
-
-
-  <%@category.freelancers.each do |freelancer| %>
-
-    <%= image_tag(freelancer.image, size: "50x50", class: "image-fl-index", id: "image_#{freelancer.id}") %>
-     <h4>Name: <%= freelancer.name %></h4>
-      <li class="list-group-item"><%= freelancer.description%></li>
-      <li class="list-group-item">$<%= freelancer.price %>/hr</li>
-      <li class="list-group-item"> <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger btn-sm"%></li>
+<div class="card-deck d-flex justify-content-between">
+  <%@category.freelancers.in_groups_of(3, false).each do |group| %>
+  <div class="row d-flex justify-content-around">
+    <% group.each do |freelancer| %>
+    <div class="card col-3 d-flex text-center">
+      <img class="card-img-top" src="<%=freelancer.image%>" alt="Card image cap">
+      <h4 class="card-title">Name: <%=freelancer.name%></h4>
+      <p class="card-text"><%=freelancer.description%></p>
+      <p class="card-text"><%=freelancer.price%>/hr</p>
+      <% if freelancer.active? %>
+      <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+      <% else %>
+      <p> Freelancer Retired </p>
+      <% end %>
+    </div>
     <% end %>
-  </ul>
+  </div>
+  <% end %>
+</div>

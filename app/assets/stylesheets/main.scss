@@ -19,9 +19,7 @@ $color5: rgba(56, 48, 46, 1);
 
 $color6: #BCED91;
 
-$custom-border: 5px dashed black;
-
-
+$custom-border: 3px black;
 
 body{
   h1{
@@ -31,6 +29,11 @@ body{
       align: center;
       color: $color3;
     }
+  }
+  .row{
+
+    border: $custom-border;
+
   }
 }
 
@@ -65,5 +68,24 @@ body{
       margin-left: 130px;
       margin-bottom: 10px;
     }
+  }
+}
+
+.cat-index-large {
+  margin-bottom: 25px;
+}
+.category-index {
+  margin-top: 40px;
+  width: 250px;
+  height: 200px;
+  display: flex;
+  justify-content: space-around;
+  border: 2px solid $color1;
+  border-radius: 10px;
+  align-items: flex-end;
+
+  .category-link {
+    margin-bottom: 25px;
+    text-decoration: none;
   }
 }

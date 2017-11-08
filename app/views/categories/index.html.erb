@@ -1,5 +1,11 @@
 <h1>TechTime connects you with talented techies with these specialties:</h1>
 
-<% @categories.each do |category| %>
-  <%= link_to category.title, category_path(category.slug) %>
-<% end %>
+<div class='container d-flex cat-index-large'>
+  <div class="card-deck d-flex justify-content-around">
+    <% @categories.each do |category| %>
+    <div class='category-index'>
+      <%= link_to category.title, category_path(category.slug), class: 'category-link' %>
+    </div>
+    <% end %>
+  </div>
+</div>

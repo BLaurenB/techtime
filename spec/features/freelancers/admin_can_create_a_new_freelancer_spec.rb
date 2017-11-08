@@ -35,7 +35,7 @@ require 'rails_helper'
       fill_in "freelancer[price]", with: 200
       select('Backend Development', from: "freelancer_category")
 
-      click_button 'Create Freelancer Profile'
+      click_button 'Submit'
 
 
 
