@@ -12,7 +12,7 @@ describe "As a visitor" do
 
       expect(page).to have_content(freelancer.name)
 
-      click_link "Remove #{freelancer.name}'s time from your cart."
+      click_on "Remove #{freelancer.name}'s time from your cart."
 
 
       expect(current_path).to eq(cart_path)
@@ -30,7 +30,7 @@ describe "As a visitor" do
 
       visit cart_path
 
-      click_link "Remove #{freelancer.name}'s time from your cart."
+      click_on "Remove #{freelancer.name}'s time from your cart."
 
       within(".success") do
         click_link  "#{freelancer.name}"
