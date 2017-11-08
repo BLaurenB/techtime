@@ -37,6 +37,23 @@ body{
   }
 }
 
+  div#order-table {
+    margin: 30px;
+    border: 2px solid $color1;
+    border-radius: 10px;
+  }
+
+  #filter_by {
+    margin: 30px;
+    border: 2px solid $color1;
+    display: flex;
+    justify-content: space-around;
+}
+
+  #filter_by .link {
+    padding-top: 8px;
+}
+
 .form-outline {
 
   background: $color1;
