@@ -34,7 +34,7 @@
   </div>
 <% else %>
   <div class="checkout">
-    <%= button_to "Checkout", orders_path(cart_contents: @cart.contents) %>
+    <%= button_to "Checkout", orders_path(cart_contents: @cart.contents), class: 'btn btn-primary' %>
   </div>
 <% end %>
 </div>
