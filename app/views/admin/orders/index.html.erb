@@ -1,16 +1,15 @@
 <h1>Admin Dashboard</h1>
 
-<div class="admin-dash-header">
-  <%=link_to "View All Freelancers", admin_freelancers_path %>
-  Ordered: <%= @all_orders.total_ordered %>
-  Paid: <%= @all_orders.total_paid %>
-  Completed: <%= @all_orders.total_completed %>
-  Cancelled: <%= @all_orders.total_cancelled %>
-  <br/>
+<div id="admin-dash-header">
+  <h4>Orders by Status</h4>
+  <span class="total">Ordered: <%= @all_orders.total_ordered %></span>
+  <span class="total">Paid: <%= @all_orders.total_paid %></span>
+  <span class="total">Completed: <%= @all_orders.total_completed %></span>
+  <span class="total">Cancelled: <%= @all_orders.total_cancelled %></span>
 </div>
 
 <div id="filter_by">
-  <h3>Filter by</h3>
+  <h4>Filter by</h4>
   <div class="link"><%= link_to "Ordered", admin_dashboard_path(filter_by: 0) %></div>
   <div class="link"><%= link_to "Paid", admin_dashboard_path(filter_by: 1) %></div>
   <div class="link"><%= link_to "Cancelled", admin_dashboard_path(filter_by: 2) %></div>
