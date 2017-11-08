@@ -4,7 +4,9 @@
 <div class="container">
     <div class="row">
       <div class="col-sm-4">
-      <%=image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
+        <%= link_to freelancer_path(freelancer) do %>
+          <%=image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
+        <% end %>
       <h5>Name: <%= freelancer.name %></h5>
       <p> <%= freelancer.description %></p>
       </div>

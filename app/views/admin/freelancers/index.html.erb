@@ -8,7 +8,9 @@
   <div class="row d-flex justify-content-around">
     <% group.each do |freelancer| %>
     <div class="card col-3 d-flex text-center">
-      <%= image_tag("#{freelancer.image}", alt: "photo of #{freelancer.name}", class: "card-img-top") %>
+      <%= link_to freelancer_path(freelancer) do %>
+        <%= image_tag("#{freelancer.image}", alt: "photo of #{freelancer.name}", class: "card-img-top") %>
+      <% end %>
       <h4 class="card-title">Name: <%=freelancer.name%></h4>
       <p class="card-text"><%=freelancer.description%></p>
       <p class="card-text"><%=number_to_currency(freelancer.price)%>/hr</p>
