@@ -4,10 +4,14 @@
 
   <%@category.freelancers.each do |freelancer| %>
 
-    <%= image_tag(@freelancer.avatar.url(:square), class: "image-fl-index", id: "image_#{freelancer.id}") %>
+  <div class="">
+      <div><%=image_tag(freelancer.avatar.url(:thumb), id: "image_#{freelancer.id}")%></div>
+    <ul>
      <h4>Name: <%= freelancer.name %></h4>
       <li class="list-group-item"><%= freelancer.description%></li>
       <li class="list-group-item">$<%= freelancer.price %>/hr</li>
       <li class="list-group-item"> <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger btn-sm"%></li>
     <% end %>
   </ul>
+
+  </div>

@@ -1,6 +1,7 @@
 <div class="container d-flex justify-content-center">
   <div class="card text-center" style="width:600px">
-    <img class="card-img-top" src="<%=@freelancer.image%>" alt="Card image cap">
+    <div><%=image_tag(@freelancer.avatar.url(:thumb), id: "image_#{@freelancer.id}")%></div>
+
     <div class="card-block">
       <h4 class="card-title"> Name: <%=@freelancer.name%></h4>
       <p class="card-text"><%=@freelancer.description%></p>
