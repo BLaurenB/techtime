@@ -19,7 +19,7 @@ class Admin::FreelancersController < Admin::BaseController
     @freelancer.category = @category
     @freelancer.update(freelancer_params)
     if @freelancer.save
-      flash[:success] = "You succefully updated #{@freelancer.name}"
+      flash[:success] = "You successfully updated #{@freelancer.name}"
       redirect_to freelancer_path(@freelancer)
     else
       render :new
