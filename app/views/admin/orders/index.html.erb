@@ -12,6 +12,7 @@ Cancelled: <%= @orders.total_cancelled %>
   <%= link_to "Paid", admin_dashboard_path(filter_by: 1) %>
   <%= link_to "Cancelled", admin_dashboard_path(filter_by: 2) %>
   <%= link_to "Completed", admin_dashboard_path(filter_by: 3) %>
+  <%= link_to "All", admin_dashboard_path %>
   <br/>
 
 <div class="filtered-orders">
