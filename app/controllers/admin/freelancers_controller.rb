@@ -14,6 +14,7 @@ class Admin::FreelancersController < Admin::BaseController
     @freelancer = @category.freelancers.new(freelancer_params)
 
     if @freelancer.save
+
       flash[:success] = "You succefully created #{@freelancer.name}"
       redirect_to freelancer_path(@freelancer)
     else
