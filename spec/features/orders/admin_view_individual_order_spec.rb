@@ -6,7 +6,6 @@ describe "As an authenticated Admin user" do
     admin = create(:user, role: 1)
     allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
     @user = create(:user)
-        # byebug
 
     @freelancer_1 = create(:freelancer)
     @freelancer_2 = create(:freelancer)
