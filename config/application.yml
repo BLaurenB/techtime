@@ -1,37 +1,24 @@
-# Add configuration values here, as shown below.
-#
-# pusher_app_id: "2954"
-# pusher_key: 7381a978f7dd7f9a1117
-# pusher_secret: abdc3b896a0ffb85d373
-# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
-# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
-#
-production:
-#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
-#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
-  S3_BUCKET_NAME: techtimeturing
-  AWS_ACCESS_KEY_ID: AKIAI5ZWYK5WPU6WPBEQ
-  AWS_SECRET_ACCESS_KEY: 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
-  S3_REGION: us-east-2
-  S3_HOST_NAME: s3.us-east-2.amazonaws.com
-
-
 development:
-  secret_key_base: ffa096348fa590e131d67e30b0c3815610b7679a8bbf87e1bebff212e649d965585fccf955165d5999dfb562018d97892c5d217686fec21fee9e07943a8c4c11
-
-  S3_BUCKET_NAME: techtimeturing
-  AWS_ACCESS_KEY_ID: AKIAI5ZWYK5WPU6WPBEQ
-  AWS_SECRET_ACCESS_KEY: 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
-  S3_REGION: us-east-2
-  S3_HOST_NAME: s3.us-east-2.amazonaws.com
-
+  secret_key_base: 
 
 test:
-  secret_key_base: b13aa68d17a60b96bd5ed46033e75f9d2c327c7cc53335d3faef95d7409be140c779efbe367cc4f88cd4221c1d90009be39a5bf6f77da6e0ec33dc06917d489e
+  secret_key_base:
 
 
-  S3_BUCKET_NAME: techtimeturing
-  AWS_ACCESS_KEY_ID: AKIAI5ZWYK5WPU6WPBEQ
-  AWS_SECRET_ACCESS_KEY: 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
-  S3_REGION: us-east-2
-  S3_HOST_NAME: s3.us-east-2.amazonaws.com
+S3_BUCKET_NAME:
+AWS_ACCESS_KEY_ID:
+AWS_SECRET_ACCESS_KEY:
+S3_REGION:
+S3_HOST_NAME:
+
+
+
+# EXAMPLE: heroku config:set USERNAME=username
+#   heroku config
+# === glacial-waters-66098 Config Vars
+# S3_BUCKET_NAME:           techtimeturing
+# AWS_ACCESS_KEY_ID:        AKIAI5ZWYK5WPU6WPBEQ
+# AWS_SECRET_ACCESS_KEY:    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
+# S3_REGION:               us!!!!!
+# S3_HOST_NAME:
+# SECRET_KEY_BASE:          1f44d55472b29d97ab98164b2f5e48b9da828e6f841ea98b29256ffe94918fdfd886c47d4bf7bbe349dd8dc564b75314d8e59c7eda45fe12e54a2960f982d8a3

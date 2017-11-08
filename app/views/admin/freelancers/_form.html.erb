@@ -35,10 +35,16 @@
     </div>
   </div>
 
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :avatar, class: 'new-account-label'%>
+      <%= f.file_field :avatar, class: 'new-account-box'%>
+    </div>
+  </div>
 
   <div class="new-account-item">
     <%= f.submit "Submit", class: "btn btn-primary create-button" %>
   </div>
   <% end %>
-</div>
+
 </div>

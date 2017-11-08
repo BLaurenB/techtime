@@ -26,7 +26,7 @@ require 'rails_helper'
 
     scenario "I can create a new freelancer" do
 
-      visit freelancers_path
+      visit admin_freelancers_path
 
       click_on 'Add a New Freelancer'
 

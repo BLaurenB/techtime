@@ -2,7 +2,7 @@ require 'rails_helper'
 
 describe "As a Visitor" do
   describe "when I visit '/freelancers' I can see all freelancers" do
-    scenario "I see existing freelancers" do
+    xit "I see existing freelancers" do
       freelancer = create_list(:freelancer, 3)
 
       visit freelancers_path
