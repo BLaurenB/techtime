@@ -32,8 +32,7 @@ describe "As an admin" do
       expect(page).to have_link("View Order 4")
 
       click_on "View Order 1"
-      expect(current_path).to eq(order_path(@order_1))
-
+      expect(current_path).to eq(admin_order_path(@order_1))
     end
   end
 end
