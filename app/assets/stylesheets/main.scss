@@ -71,13 +71,20 @@ body{
   }
 }
 
+.cat-index-large {
+  margin-bottom: 25px;
+}
 .category-index {
   margin-top: 40px;
-  width: 300px;
+  width: 275px;
   height: 200px;
   display: flex;
-  justify-content: space-between;
-  text-align: center;
+  justify-content: space-around;
   border: 2px solid $color1;
   border-radius: 10px;
+  align-items: flex-end;
+
+  .category-link {
+    margin-bottom: 15px;
+  }
 }
