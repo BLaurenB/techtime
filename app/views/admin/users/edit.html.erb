@@ -1,21 +1,71 @@
-<%=form_for [:admin, current_user] do |f| %>
-<%= f.label :username%>
-<%= f.text_field :username%>
-<%= f.label :email%>
-<%= f.email_field :email%>
-<%= f.label :full_name%>
-<%= f.text_field :full_name%>
-<%= f.label :company%>
-<%= f.text_field :company%>
-<%= f.label :address1%>
-<%= f.text_field :address1%>
-<%= f.label :address2%>
-<%= f.text_field :address2%>
-<%= f.label :city%>
-<%= f.text_field :city%>
-<%= f.label :state%>
-<%= f.text_field :state%>
-<%= f.label :zip%>
-<%= f.text_field :zip%>
-<%= f.submit "Update Account" %>
-<% end %>
+<h1> Edit Your Account Information Below </h1>
+<div class="form-outline">
+  <%=form_for [:admin, current_user] do |f| %>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :username%>
+      <%= f.text_field :username%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :email%>
+      <%= f.email_field :email%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :full_name%>
+      <%= f.text_field :full_name%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :company%>
+      <%= f.text_field :company%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :address1%>
+      <%= f.text_field :address1%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :address2%>
+      <%= f.text_field :address2%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :city%>
+      <%= f.text_field :city%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :state%>
+      <%= f.text_field :state%>
+    </div>
+  </div>
+
+  <div class="new-account-item">
+    <div class="form-control account-input">
+      <%= f.label :zip%>
+      <%= f.text_field :zip%>
+    </div>
+  </div>
+    <div class="new-account-item">
+      <%= f.submit "Update Account" %>
+    </div>
+    <% end %>
+  </div>
