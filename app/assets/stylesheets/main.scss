@@ -19,9 +19,7 @@ $color5: rgba(56, 48, 46, 1);
 
 $color6: #BCED91;
 
-$custom-border: 5px dashed black;
-
-
+$custom-border: 3px black;
 
 body{
   h1{
@@ -31,6 +29,11 @@ body{
       align: center;
       color: $color3;
     }
+  }
+  .row{
+
+    border: $custom-border;
+
   }
 }
 
