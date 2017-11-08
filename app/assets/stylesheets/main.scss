@@ -72,7 +72,6 @@ div#admin-dash-header {
   background: $color1;
   border: 2px solid $color1;
   border-radius: 10px;
-  margin-left: 350px;
   width: 600px;
   margin-top: 5px;
 
@@ -118,4 +117,9 @@ div#admin-dash-header {
     margin-bottom: 25px;
     text-decoration: none;
   }
+}
+
+.form-container {
+  display: flex;
+  justify-content: center;
 }
