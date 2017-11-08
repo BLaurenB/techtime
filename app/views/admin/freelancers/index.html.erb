@@ -8,12 +8,19 @@
   <div class="row d-flex justify-content-around">
     <% group.each do |freelancer| %>
     <div class="card col-3 d-flex text-center">
-      <img class="card-img-top" src="<%=freelancer.image%>" alt="Card image cap">
+      <%= link_to freelancer_path(freelancer) do %>
+        <%= image_tag("#{freelancer.image}", alt: "photo of #{freelancer.name}", class: "card-img-top") %>
+      <% end %>
       <h4 class="card-title">Name: <%=freelancer.name%></h4>
       <p class="card-text"><%=freelancer.description%></p>
-      <p class="card-text"><%=freelancer.price%>/hr</p>
+      <p class="card-text"><%=number_to_currency(freelancer.price)%>/hr</p>
       <p class="card-text"><%=freelancer.status%></p>
-      <%= link_to "Edit", edit_admin_freelancer_path(freelancer)%>
+      <h4><%= link_to "Edit", edit_admin_freelancer_path(freelancer)%></h4>
+      <% if freelancer.active? %>
+        <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+      <% else %>
+        <p> Freelancer Retired </p>
+      <%end %>
     </div>
     <% end %>
     <% end %>
