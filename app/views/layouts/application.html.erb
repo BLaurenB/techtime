@@ -37,11 +37,9 @@
         <%= link_to "My Account", user_path(current_user), class: "nav-link" %>
       <% end %>
     </div>
+
     <div class="nav-item">
-      <p>Cart: <%= @cart.total_count %></p>
-    </div>
-    <div class="nav-item">
-        <a class="nav-link" href="/cart"> <span class="glyphicon glyphicon-shopping-cart">Cart</span>
+        <a class="nav-link" href="/cart"> <span class="glyphicon glyphicon-shopping-cart">Cart: <%= @cart.total_count %></span>
         </a>
     </div>
   </nav>
