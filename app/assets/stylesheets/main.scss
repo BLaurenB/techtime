@@ -76,7 +76,7 @@ body{
 }
 .category-index {
   margin-top: 40px;
-  width: 275px;
+  width: 250px;
   height: 200px;
   display: flex;
   justify-content: space-around;
@@ -85,6 +85,7 @@ body{
   align-items: flex-end;
 
   .category-link {
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    text-decoration: none;
   }
 }
