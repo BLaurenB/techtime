@@ -4,7 +4,7 @@ class Admin::OrdersController < Admin::BaseController
     if params[:filter_by]
       @orders = Order.filter_by(params[:filter_by])
     else
-      @orders = Order.all
+      @orders = Order.orders_by_id
     end
   end
 

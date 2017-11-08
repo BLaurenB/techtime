@@ -49,4 +49,7 @@ class Order < ApplicationRecord
     where(status: status_params)
   end
 
+  def self.orders_by_id
+    order(:id)
+  end
 end
