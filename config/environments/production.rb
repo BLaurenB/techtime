@@ -92,10 +92,10 @@ Rails.application.configure do
   config.paperclip_defaults = {
     storage: :s3,
     s3_credentials: {
-      bucket: ENV.fetch('techtimeturing'),
-      access_key_id: ENV.fetch('AKIAI5ZWYK5WPU6WPBEQ'),
-      secret_access_key: ENV.fetch('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'),
-      s3_region: ENV.fetch('us'),
+      bucket: ENV.fetch(),
+      access_key_id: ENV.fetch(),
+      secret_access_key: ENV.fetch(),
+      s3_region: ENV.fetch(),
     }
   }
 

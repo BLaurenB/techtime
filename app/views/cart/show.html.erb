@@ -2,7 +2,7 @@
 
 <% @cart.collect_freelancers.each do |freelancer| %>
 <ul class="list-group">
-  <%= image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
+  <%= image_tag(@freelancer.avatar.url(:square), class: "image-fl-index", id: "image_#{freelancer.id}") %>
   <h3>Name: <%= freelancer.name %></h3>
   <li class="list-group-item"><%= freelancer.description %></li>
   <li class="list-group-item">Quantity: <%= @cart.count_of(freelancer.id)%></li>
