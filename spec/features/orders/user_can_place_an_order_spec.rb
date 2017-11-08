@@ -12,9 +12,11 @@ describe "As a user when I have freelancers in my cart" do
     end
 
     scenario "my order is placed" do
+      expect(page).to have_content("Cart: 1")
       click_button "Checkout"
 
       expect(current_path).to eq(orders_path)
+      expect(page).to have_content("Cart: 0")
       expect(page).to have_content("Order was successfully placed!")
     end
 
