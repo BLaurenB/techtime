@@ -1,5 +1,7 @@
 <h1>Welcome, <%= @user.username %>!</h1>
 
+<%= link_to "My Orders", orders_path %>
+
 <div class="profile">
   <h2> <%= @user.full_name %></h2>
   <p>Email: <%= @user.email %></p>
