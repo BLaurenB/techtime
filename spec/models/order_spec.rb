@@ -47,10 +47,10 @@ describe Order do
 
   describe "class methods" do
     before do
-      order_1 = create(:order)
-      order_2 = create(:order, status: 1)
-      order_3 = create(:order, status: 2)
-      order_4 = create(:order, status: 3)
+      @order_1 = create(:order)
+      @order_2 = create(:order, status: 1)
+      @order_3 = create(:order, status: 2)
+      @order_4 = create(:order, status: 3)
     end
 
     it ".total_ordered" do
@@ -67,6 +67,15 @@ describe Order do
 
     it ".total_completed" do
       expect(Order.total_completed).to eq(1)
+    end
+
+    it ".orders_by_id" do
+      expect(Order.orders_by_id.first).to eq(@order_1)
+      expect(Order.orders_by_id.last).to eq(@order_4)
+    end
+
+    it ".filter_by(status_params)" do
+      expect(Order.filter_by("Ordered")).to eq([@order_1])
     end
 
   end
