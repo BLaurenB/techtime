@@ -1,78 +1,81 @@
-<div class="form-outline">
-  <%=form_for @user do |f| %>
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :username, class: 'new-account-label'%>
-      <%= f.text_field :username, class: 'new-account-box'%>
+<h1>Create a new account for TechTime!</h1>
+<div class="form-container">
+  <div class="form-outline">
+    <%=form_for @user do |f| %>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :username, class: 'new-account-label'%>
+        <%= f.text_field :username, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :email, class: 'new-account-label'%>
-      <%= f.email_field :email, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :email, class: 'new-account-label'%>
+        <%= f.email_field :email, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :password, class: 'new-account-label'%>
-      <%= f.password_field :password, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :password, class: 'new-account-label'%>
+        <%= f.password_field :password, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :full_name, class: 'new-account-label'%>
-      <%= f.text_field :full_name, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :full_name, class: 'new-account-label'%>
+        <%= f.text_field :full_name, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :company, class: 'new-account-label'%>
-      <%= f.text_field :company, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :company, class: 'new-account-label'%>
+        <%= f.text_field :company, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :address1, class: 'new-account-label'%>
-      <%= f.text_field :address1, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :address1, class: 'new-account-label'%>
+        <%= f.text_field :address1, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :address2, class: 'new-account-label'%>
-      <%= f.text_field :address2, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :address2, class: 'new-account-label'%>
+        <%= f.text_field :address2, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :cit, class: 'new-account-label'%>
-      <%= f.text_field :city, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :cit, class: 'new-account-label'%>
+        <%= f.text_field :city, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :state, class: 'new-account-label'%>
-      <%= f.text_field :state, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :state, class: 'new-account-label'%>
+        <%= f.text_field :state, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <div class="form-control account-input">
-      <%= f.label :zip, class: 'new-account-label'%>
-      <%= f.text_field :zip, class: 'new-account-box'%>
+    <div class="new-account-item">
+      <div class="form-control account-input">
+        <%= f.label :zip, class: 'new-account-label'%>
+        <%= f.text_field :zip, class: 'new-account-box'%>
+      </div>
     </div>
-  </div>
 
-  <div class="new-account-item">
-    <%= f.submit "Create Account", class: "btn btn-primary create-button" %>
-  </div>
-  <% end %>
+    <div class="new-account-item">
+      <%= f.submit "Create Account", class: "btn btn-primary create-button" %>
+    </div>
+    <% end %>
 
+  </div>
 </div>
