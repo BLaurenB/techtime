@@ -16,7 +16,7 @@ describe "When I visit an order" do
       visit order_path(order)
 
       expect(page).to have_content("Paid")
-      expect(page).to have_content("Date: #{order.created_at}")
+      expect(page).to have_content("Date: #{order.created_at.strftime(format='%m/%d/%Y: %H:%M:%S %Z')}")
 
       expect(page).to have_content("Name")
       expect(page).to have_content("1 hour")
@@ -40,8 +40,8 @@ describe "When I visit an order" do
 
 
       expect(page).to have_content("Completed")
-      expect(page).to have_content("Date: #{order.created_at}")
-      expect(page).to have_content("Updated on: #{order.updated_at}")
+      expect(page).to have_content("Date: #{order.created_at.strftime(format='%m/%d/%Y: %H:%M:%S %Z')}")
+      expect(page).to have_content("Updated on: #{order.updated_at.strftime(format='%m/%d/%Y: %H:%M:%S %Z')}")
 
     end
 
