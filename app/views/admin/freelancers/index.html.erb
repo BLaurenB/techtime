@@ -3,22 +3,25 @@
    <%= link_to "Add a New Freelancer", new_admin_freelancer_path, class: "nav-link" %>
  </div>
 
- <div class="card-container">
-   <% @freelancers.each do |freelancer| %>
-   <div class="card-show">
-     <%= link_to freelancer_path(freelancer) do %>
-     <%= image_tag("#{freelancer.image}", alt: "photo of #{freelancer.name}", class: "card-img-top card-image") %>
-     <% end %>
-     <h4 class="card-title"> <%=freelancer.name%></h4>
-     <p class="card-text card-description"><%=freelancer.description%></p>
-     <p class="card-text"><%=number_to_currency(freelancer.price)%>/hr</p>
-     <div class="card-show-button">
-       <% if freelancer.active? %>
-       <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
-       <% else %>
-       <p> Freelancer Retired </p>
-       <% end %>
-     </div>
-   </div>
-   <% end %>
- </div>
+
+<div class="card-container">
+  <% @freelancers.each do |freelancer| %>
+  <div class="card-show">
+    <%= link_to freelancer_path(freelancer) do %>
+    <%= image_tag("#{freelancer.image}", alt: "photo of #{freelancer.name}", class: "card-img-top card-image") %>
+    <% end %>
+    <h4 class="card-title"> <%=freelancer.name%></h4>
+    <p class="card-text card-description"><%=freelancer.description%></p>
+    <p class="card-text"><%=number_to_currency(freelancer.price)%>/hr</p>
+    <p class="card-text"><%=freelancer.status%></p>
+    <div class="card-show-button">
+      <h5 class='card-show-link'><%= link_to "Edit", edit_admin_freelancer_path(freelancer)%></h5>
+      <% if freelancer.active? %>
+      <%= button_to "Choose Me!", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-primary"%>
+      <% else %>
+      <p> Freelancer Retired </p>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+</div>

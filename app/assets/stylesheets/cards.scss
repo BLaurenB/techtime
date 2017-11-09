@@ -9,7 +9,7 @@
   display: flex;
   flex-direction: column;
   width: 400px;
-  height: 520px;
+  height: 550px;
   margin: 5px;
   border: 2px solid $color2;
   border-radius: 5px;
@@ -25,5 +25,9 @@
     display: flex;
     justify-content: space-around;
     margin-bottom: 17px;
+
+    .card-show-link {
+      margin-top: 15px;
+    }
   }
 }
