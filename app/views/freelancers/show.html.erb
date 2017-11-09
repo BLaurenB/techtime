@@ -4,7 +4,7 @@
     <div class="card-block">
       <h4 class="card-title"> Name: <%=@freelancer.name%></h4>
       <p class="card-text"><%=@freelancer.description%></p>
-      <p class="list-group-item"><%=@freelancer.price %>/ hr</p>
+      <p class="list-group-item"><%=number_to_currency(@freelancer.price) %>/ hr</p>
       <% if @freelancer.active? %>
       <%= button_to "Choose Me!", cart_index_path(freelancer_id: @freelancer.id), class: "btn btn-primary"%>
       <% else %>
