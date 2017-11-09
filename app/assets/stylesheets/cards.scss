@@ -1,0 +1,29 @@
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-show {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  height: 500px;
+  margin: 5px;
+  border: 2px solid $color2;
+  border-radius: 5px;
+  padding: 2px;
+  justify-content: left;
+
+  .card-description {
+    height: 150px;
+    overflow-x: hidden;
+  }
+
+  .card-show-button {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 15px;
+  }
+}
