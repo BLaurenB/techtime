@@ -20,6 +20,7 @@ $color6: #BCED91;
 $custom-border: 3px black;
 
 body{
+
   h1{
     border: $custom-border;
     margin-top: 15px;
@@ -50,9 +51,16 @@ body{
     text-transform: uppercase;
 	  margin: 3px;
 }
+.carousel {
+  width:1200px;
+  height:1200px;
+  margin: auto;
+}
 .home{
-  background-color: $color2;
-
+  padding-left: 10px;
+  font-size: .75em;
+  text-align: center;
+  margin: 30px;
 }
 .user-info{
   margin: 30px;
@@ -123,7 +131,6 @@ div#order-table {
   justify-content: space-around;
 
 }
-
 
 .form-outline {
 
