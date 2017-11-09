@@ -1,8 +1,27 @@
+.card-outer-container {
+  padding-left: 200px;
+  padding-right: 200px;
+}
 
 .card-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
+}
+
+.card-category {
+  width: 200px;
+  height:200px;
+  margin: 5px;
+  border: 2px solid $color2;
+  border-radius: 5px;
+  padding: 2px;
+  display: flex;
+  justify-content: center;
+  a {
+    margin-top: 85px;
+    color: $color3;
+  }
 }
 
 .card-show {

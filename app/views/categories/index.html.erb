@@ -1,11 +1,11 @@
 <h2>TechTime connects you with talented techies with these specialties:</h2>
 
-<div class='container d-flex cat-index-large'>
-  <div class="card-deck d-flex justify-content-around">
+<div class="card-outer-container">
+  <div class="card-container">
     <% @categories.each do |category| %>
-    <div class='category-index'>
-      <h3><%= link_to category.title, category_path(category.slug), class: 'category-link' %></h3>
-    </div>
+      <div class="card-category">
+        <%= link_to category.title, category_path(category.slug), class: 'category-link' %>
+      </div>
     <% end %>
   </div>
 </div>
