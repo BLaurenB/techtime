@@ -21,7 +21,7 @@ describe "As an authenticated Admin user" do
 
   describe "When I visit an individual order page" do
     scenario "I can see the order's date and time, and Status" do
-      expect(page).to have_content(@order.created_at)
+      expect(page).to have_content(@order.created_at.strftime(format='%m/%d/%Y: %H:%M:%S %Z'))
       expect(page).to have_content("Paid")
     end
 
