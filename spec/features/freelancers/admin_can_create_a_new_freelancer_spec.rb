@@ -42,7 +42,7 @@ require 'rails_helper'
       expect(current_path).to eq(freelancer_path(Freelancer.last.id))
       expect(page).to have_content("Emily")
       expect(page).to have_content("Backend Developer with 10 years of experience")
-      expect(page).to have_content("200/ hr")
+      expect(page).to have_content("$200.00/ hr")
 
     end
   end

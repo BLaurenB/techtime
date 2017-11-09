@@ -2,7 +2,7 @@
   <div class="card text-center" style="width:600px">
     <%= image_tag("#{@freelancer.image}", alt: "photo of #{@freelancer.name}", class: "card-img-top") %>
     <div class="card-block">
-      <h4 class="card-title"> Name: <%=@freelancer.name%></h4>
+      <h4 class="card-title"> <%=@freelancer.name%></h4>
       <p class="card-text"><%=@freelancer.description%></p>
       <p class="list-group-item"><%=number_to_currency(@freelancer.price) %>/ hr</p>
       <% if @freelancer.active? %>

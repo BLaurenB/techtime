@@ -11,7 +11,7 @@
     <%= link_to freelancer_path(freelancer) do %>
     <%= image_tag("#{freelancer.image}", alt: "photo of #{freelancer.name}", class: "card-img-top card-image") %>
     <% end %>
-    <h4 class="card-title">Name: <%=freelancer.name%></h4>
+    <h4 class="card-title"> <%=freelancer.name%></h4>
     <p class="card-text card-description"><%=freelancer.description%></p>
     <p class="card-text"><%=number_to_currency(freelancer.price)%>/hr</p>
     <div class="card-show-button">
