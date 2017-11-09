@@ -4,7 +4,7 @@
   <div class="card-deck d-flex justify-content-around">
     <% @categories.each do |category| %>
     <div class='category-index'>
-      <%= link_to category.title, category_path(category.slug), class: 'category-link' %>
+      <h3><%= link_to category.title, category_path(category.slug), class: 'category-link' %></h3>
     </div>
     <% end %>
   </div>
