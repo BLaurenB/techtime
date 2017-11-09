@@ -1,5 +1,7 @@
 <h1>Welcome, <%= @user.username %>!</h1>
 
+<div class="form-container">
+
 <%= link_to "My Orders", orders_path %>
 
 <div class="profile">
@@ -9,4 +11,6 @@
   <p>Address: <%= @user.address1 %></p>
   <p>Location: <%= @user.city %>, <%= @user.state %></p>
   <p>Zip Code: <%= @user.zip %></p>
+</div>
+
 </div>
