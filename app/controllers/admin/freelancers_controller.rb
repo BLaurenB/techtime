@@ -12,7 +12,7 @@ class Admin::FreelancersController < Admin::BaseController
 
     @category= Category.find_by(title: category_params[:category])
     @freelancer = @category.freelancers.new(freelancer_params)
-
+    # Set freelancer.image equal to the params[:avatar] and save the post.
     if @freelancer.save
 
       flash[:success] = "You succefully created #{@freelancer.name}"

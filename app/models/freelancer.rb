@@ -6,7 +6,7 @@ class Freelancer < ApplicationRecord
   has_many :orders, through: :order_freelancers
 
   enum status: ["active", "retired"]
-  attr_accessor :avatar_file_name
+
 
 
   has_attached_file :avatar, styles: {

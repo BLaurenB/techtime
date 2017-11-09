@@ -9,6 +9,9 @@ Rails.application.configure do
       s3_region: ENV.fetch('AWS_REGION'),
     }
   }
+
+    Paperclip.options[:command_path] = "/usr/local/bin/config"
+    
   # Settings specified here will take precedence over those in config/application.rb.
 
   # Code is not reloaded between requests.
