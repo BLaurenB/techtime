@@ -33,7 +33,6 @@ describe Cart do
   end
 
   it '#collect_freelancers' do
-    #factory_bot should do it if we set it up in the factory
     create_list(:freelancer, 2)
     expect(cart.collect_freelancers.first).to be_an_instance_of(Freelancer)
   end
