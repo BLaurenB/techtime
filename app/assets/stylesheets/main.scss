@@ -1,6 +1,4 @@
 
-
-
 /* Coolors Exported Palette - coolors.co/ccdad1-9caea9-788585-6f6866-38302e */
 
 /* HSL */
@@ -23,7 +21,6 @@ $custom-border: 3px black;
 
 body{
   h1{
-
     border: $custom-border;
     text: {
       align: center;
@@ -34,8 +31,23 @@ body{
     border: $custom-border;
   }
 }
+  .user-info{
+  margin: 30px;
+  padding-left: 10px;
+  border: 2px solid $color1;
+  font-size: .75em;
+}
+div#order-show-table {
+  margin: 30px;
+  border: 2px solid $color1;
+}
+div.order-show-total {
+  margin: 30px;
+  padding-left: 10px;
+  border: 2px solid $color1;
+}
 
-div#admin-dash-header {
+  div#admin-dash-header {
   margin: 30px;
   border: 2px solid $color1;
   display: flex;

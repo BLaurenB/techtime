@@ -1,21 +1,21 @@
 <h1>Order: <%=@order.id%></h1>
 
-<div>Date: <%= @order.created_at %></div>
+<div class="user-info">
+  <h5> Purchaser: <%= @order.user.full_name %></h5>
+  <div> Date: <%= @order.created_at.strftime(format='%m/%d/%Y: %H:%M:%S %Z') %></div>
+  <div> Company:<%= @order.user.company%></div>
+  <div> Address:<%= @order.user.address1%></div>
+  <div><%= @order.user.address2%></div>
+  <div> City:<%= @order.user.city%></div>
+  <div> State:<%= @order.user.state%></div>
+  <div> Zip:<%= @order.user.zip%></div>
 
-<div class=""><h2>Purchaser: <%= @order.user.full_name %></h2></div>
-<div><p><%= @order.user.company%></p></div>
-<div><p><%= @order.user.address1%></p></div>
-<div><p><%= @order.user.address2%></p></div>
-<div><p><%= @order.user.city%></p></div>
-<div><p><%= @order.user.state%></p></div>
-<div><p><%= @order.user.zip%></p></div>
+  <div>Status: <%= @order.status %></div>
+  <% if @order.status == ("Completed" || "Cancelled") %>
+  <div>Updated on: <%= @order.updated_at %><%end%></div>
+</div>
 
-
-<div>Status: <%= @order.status %></div>
-<% if @order.status == ("Completed" || "Cancelled") %>
-<div>Updated on: <%= @order.updated_at %><%end%></div>
-
-<div>
+<div id="order-show-table">
   <table class="table table-striped">
     <thead>
       <tr>
@@ -60,4 +60,4 @@
   </table>
 </div>
 
-<div>Total: <%= number_to_currency(@order.total) %></div>
+<div class="order-show-total">Total: <%= number_to_currency(@order.total) %></div>
