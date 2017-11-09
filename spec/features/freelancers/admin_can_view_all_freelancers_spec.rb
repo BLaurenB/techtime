@@ -14,9 +14,9 @@ describe "As an admin" do
 
       visit admin_dashboard_path
 
-    expect(page).to have_link("View All Freelancers")
+    expect(page).to have_link("Freelancers")
 
-      click_link "View All Freelancers"
+      click_link "Freelancers"
 
     expect(current_path).to eq(admin_freelancers_path)
     end
@@ -26,7 +26,7 @@ describe "As an admin" do
     scenario "I should see a table with all the items(active and inactive)" do
 
       visit admin_freelancers_path
-    
+
 
       expect(page).to have_content(@freelancer_targeted.name)
       expect(page).to have_content(@freelancer_targeted.description)
