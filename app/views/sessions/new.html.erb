@@ -1,6 +1,6 @@
 <h1>Login or create a new account</h1>
-<%= link_to "Create Account", new_user_path %>
 
+<div class='form-container login'>
 <%= form_for(:session, url: login_path) do |f|  %>
 <%= f.label :username %>
 <%= f.text_field :username %>
@@ -8,3 +8,9 @@
 <%= f.password_field :password %>
 <%= f.submit "Login", class: "btn btn-primary" %>
 <% end  %>
+</div>
+
+
+<div class="form-container">
+  <h2><%= link_to "Create Account", new_user_path %></h2>
+</div>
