@@ -22,10 +22,15 @@ $custom-border: 3px black;
 body{
   h1{
     border: $custom-border;
+    margin-top: 15px;
     text: {
       align: center;
       color: $color3;
+
     }
+  }
+  h2{
+    @extend h1;
   }
   .row{
     border: $custom-border;
@@ -105,7 +110,7 @@ div#order-table {
 }
 .col-sm-4{
   padding-top: 8px;
-  
+
 }
 .image-fl-index {
   padding: 5px;
