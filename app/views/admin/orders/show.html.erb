@@ -46,7 +46,7 @@
           <%= pluralize(quantity, 'hour') %>
         </td>
         <td>
-          <% number_to_currency(@freelancers.find(id).price) %>
+          <%= number_to_currency(@freelancers.find(id).price) %>
         </td>
         <td>
           <%= number_to_currency(@order.subtotal(id, quantity)) %>
