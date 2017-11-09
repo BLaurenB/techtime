@@ -17,7 +17,7 @@
   <div class="link"><%= link_to "All", admin_dashboard_path %></div>
 </div>
 
-      <div id="order-table">
+      <div class='filtered-orders' id="order-table">
         <table class="table table-striped">
             <thead>
               <tr>
@@ -36,7 +36,7 @@
               </tr>
             </thead>
               <% @orders.each do |order| %>
-              <tr>
+              <tr class="order-<%="#{order.id}"%>">
                 <td>
                   <%= order.id %>
                 </td>

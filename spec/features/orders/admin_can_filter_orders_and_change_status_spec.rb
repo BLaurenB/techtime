@@ -30,7 +30,7 @@ describe "As an Admin" do
       expect(page).to have_content("Ordered: 2")
 
       within ".order-1" do
-        expect(page).to have_content("Status: Ordered")
+        expect(page).to have_content("Ordered")
         click_on "Cancel"
       end
 
@@ -38,7 +38,7 @@ describe "As an Admin" do
       expect(page).to have_content("Ordered: 1")
 
       within ".order-1" do
-        expect(page).to have_content("Status: Cancelled")
+        expect(page).to have_content("Cancelled")
       end
     end
 
@@ -55,7 +55,7 @@ describe "As an Admin" do
       expect(page).to have_content("Paid: 2")
 
       within ".order-5" do
-        expect(page).to have_content("Status: Paid")
+        expect(page).to have_content("Paid")
       end
     end
 
@@ -72,7 +72,7 @@ describe "As an Admin" do
       expect(page).to have_content("Completed: 2")
 
       within ".order-2" do
-        expect(page).to have_content("Status: Completed")
+        expect(page).to have_content("Completed")
       end
     end
 
