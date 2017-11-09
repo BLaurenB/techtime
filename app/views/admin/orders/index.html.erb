@@ -1,36 +1,65 @@
 <h1>Admin Dashboard</h1>
 
-<%=link_to "View All Freelancers", admin_freelancers_path %>
-Ordered: <%= @orders.total_ordered %>
-Paid: <%= @orders.total_paid %>
-Completed: <%= @orders.total_completed %>
-Cancelled: <%= @orders.total_cancelled %>
-<br/>
-
-  <h2>Filter by</h2>
-  <%= link_to "Ordered", admin_dashboard_path(filter_by: 0) %>
-  <%= link_to "Paid", admin_dashboard_path(filter_by: 1) %>
-  <%= link_to "Cancelled", admin_dashboard_path(filter_by: 2) %>
-  <%= link_to "Completed", admin_dashboard_path(filter_by: 3) %>
-  <%= link_to "All", admin_dashboard_path %>
-  <br/>
-
-<div class="filtered-orders">
-  <% @orders.each do |order| %>
-  <div class="order-<%="#{order.id}"%>">
-    Order Id:<%= order.id %>
-    Order Status: <%= order.status %>
-    <% if order.status == ("Ordered" || "Paid") %>
-    <%= link_to "Cancel", admin_dashboard_path(order_id: order.id, status: 'Cancelled'), method: :patch %>
-    <% end %>
-    <% if order.Ordered? %>
-    <%= link_to "Mark as Paid", admin_dashboard_path(order_id: order.id, status: 'Paid'), method: :patch %>
-    <% end %>
-    <% if order.Paid? %>
-    <%= link_to "Mark as Completed", admin_dashboard_path(order_id: order.id, status: 'Completed'), method: :patch %>
-    <% end %>
-    <%= link_to "View Order #{order.id}", admin_order_path(order) %>
-  </div>
-</br>
-<% end %>
+<div id="admin-dash-header">
+  <h4>Orders by Status</h4>
+  <span class="total">Ordered: <%= @all_orders.total_ordered %></span>
+  <span class="total">Paid: <%= @all_orders.total_paid %></span>
+  <span class="total">Completed: <%= @all_orders.total_completed %></span>
+  <span class="total">Cancelled: <%= @all_orders.total_cancelled %></span>
 </div>
+
+<div id="filter_by">
+  <h4>Filter by</h4>
+  <div class="link"><%= link_to "Ordered", admin_dashboard_path(filter_by: 0) %></div>
+  <div class="link"><%= link_to "Paid", admin_dashboard_path(filter_by: 1) %></div>
+  <div class="link"><%= link_to "Cancelled", admin_dashboard_path(filter_by: 2) %></div>
+  <div class="link"><%= link_to "Completed", admin_dashboard_path(filter_by: 3) %></div>
+  <div class="link"><%= link_to "All", admin_dashboard_path %></div>
+</div>
+
+      <div id="order-table">
+        <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>
+                  Order Id
+                </th>
+                <th>
+                  Status
+                </th>
+                <th>
+                  Action
+                </th>
+                <th>
+                  View Order
+                </th>
+              </tr>
+            </thead>
+              <% @orders.each do |order| %>
+              <tr>
+                <td>
+                  <%= order.id %>
+                </td>
+                <td>
+                  <%=order.status %>
+                </td>
+                <td>
+                  <% if order.status == ("Ordered" || "Paid") %>
+                  <%= link_to "Cancel", admin_dashboard_path(order_id: order.id, status: 'Cancelled'), method: :patch %>
+                  <% end %>
+                  <% if order.Ordered? %>
+                  <%= link_to "Mark as Paid", admin_dashboard_path(order_id: order.id, status: 'Paid'), method: :patch %>
+
+                  <% end %>
+                  <% if order.Paid? %>
+                  <%= link_to "Mark as Completed", admin_dashboard_path(order_id: order.id, status: 'Completed'), method: :patch %>
+                  <% end %>
+                </td>
+                <td>
+                  <%= link_to "View Order #{order.id}", admin_order_path(order) %>
+                </td>
+              </tr>
+              <%end %>
+            </tbody>
+          </table>
+        </div>
