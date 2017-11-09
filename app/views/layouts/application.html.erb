@@ -14,6 +14,11 @@
         <%= image_tag("7e548a5e-43d8-46d0-bde9-55b86fb22464.png", size: "150x150", alt: "Techtime Logo", class: "d-inline-block align-top") %>
       </a>
     <div class="nav-item">
+      <% if current_user && current_user.admin? %>
+        <a class="nav-link" href="/admin/dashboard">Orders</a>
+      <% end %>
+    </div>
+    <div class="nav-item">
         <a class="nav-link" href="/categories">Categories</a>
     </div>
     <div class="nav-item">
