@@ -1,42 +1,43 @@
 <h1>Current Cart</h1>
 
-<% @cart.collect_freelancers.each do |freelancer| %>
-<div class="container">
-    <div class="row">
+  <% @cart.collect_freelancers.each do |freelancer| %>
+    <div class="row" id="item">
       <div class="col-sm-4">
         <%= link_to freelancer_path(freelancer) do %>
-          <%=image_tag(freelancer.image, size: "100x100", class: "image-fl-index", id: "image_#{freelancer.id}") %>
+          <%=image_tag(freelancer.image, size: "150x150", class: "image-fl-index", id: "image_#{freelancer.id}") %>
         <% end %>
-      <h5>Name: <%= freelancer.name %></h5>
+      <h4>Name: <%= freelancer.name %></h4>
       <p> <%= freelancer.description %></p>
       </div>
-      <div class="col-sm-4">
-        <p> Quantity: <%= @cart.count_of(freelancer.id)%></p>
-        <br>
-        <br>
-        <div class="btn-group btn-group-justified">
+      <div class="col-sm-4 d-flex justify-content-around">
+        <div class="d-flex flex-column justify-content-around">
+        <h4> Quantity: <%= @cart.count_of(freelancer.id)%></h4>
           <%= button_to "Increase Amount", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-info"%>
           <%= button_to "Decrease Amount", cart_path(freelancer_id: freelancer.id), class: "btn btn-info", method: :patch%>
         </div>
       </div>
-        <div class="col-sm-4">
-          <p> $<%= freelancer.price %>/hr</p>
-          <p>  Subtotal: $<%= @cart.subtotal(freelancer) %></p>
+        <div class="col-sm-4 d-flex justify-content-around">
+          <div class="d-flex flex-column justify-content-around">
+          <h5> $<%= freelancer.price %>/hr</h5>
+          <h4>  Subtotal: $<%= @cart.subtotal(freelancer) %></h4>
           <%= button_to "Remove #{freelancer.name}'s time from your cart.", cart_index_path(freelancer_id: freelancer.id), class: "btn btn-danger", method: :delete %>
         </div>
       </div>
     </div>
       <% end %>
+    </div>
 
-  <h2>Total: $<%= @cart.total_price %></h2>
-</div>
-<% if current_user.nil? %>
+<div class="total-price-cart">
+    <h2>Total: $<%= @cart.total_price %></h2>
+    <% if current_user.nil? %>
   <div class="login-to-checkout">
     <%= link_to "Login or Create Account to Checkout", login_path %>
   </div>
-<% else %>
+    <% else %>
   <div class="checkout">
     <%= button_to "Checkout", orders_path(cart_contents: @cart.contents), class: 'btn btn-primary' %>
   </div>
-<% end %>
+    <% end %>
+</div>
+
 </div>

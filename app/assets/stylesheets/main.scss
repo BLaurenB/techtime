@@ -31,19 +31,25 @@ body{
     border: $custom-border;
   }
 }
-  .navbar{
-    background-color: $color4;
-    font-size: 1.5em;
+.navbar{
+  background-color: $color4;
+  font-size: 1.5em;
 
-      a{
-        color: $color2;
-      }
-}
-  .home{
-    background-color: $color2;
-
+  a{
+    color: $color2;
   }
-  .user-info{
+}
+.btn {
+    padding: 14px 24px;
+    font-size: .75em;
+    text-transform: uppercase;
+	  margin: 3px;
+}
+.home{
+  background-color: $color2;
+
+}
+.user-info{
   margin: 30px;
   padding-left: 10px;
   border: 2px solid $color1;
@@ -59,37 +65,60 @@ div.order-show-total {
   border: 2px solid $color1;
 }
 
-  div#admin-dash-header {
+div#admin-dash-header {
   margin: 30px;
   border: 2px solid $color1;
   display: flex;
   justify-content: space-around;
 }
-  #admin-dash-header .link{
-    padding-top: 8px;
-  }
+#admin-dash-header .link{
+  padding-top: 8px;
+}
 
-  #admin-dash-header .total {
+#admin-dash-header .total {
   padding-top: 8px;
   font-weight: bold;
 }
 
-  div#order-table {
-    margin: 30px;
-    border: 2px solid $color1;
-    border-radius: 10px;
-  }
-
-  #filter_by {
-    margin: 30px;
-    border: 2px solid $color1;
-    display: flex;
-    justify-content: space-around;
+div#order-table {
+  margin: 30px;
+  border: 2px solid $color1;
+  border-radius: 10px;
 }
 
-  #filter_by .link {
-    padding-top: 8px;
+#filter_by {
+  margin: 30px;
+  border: 2px solid $color1;
+  display: flex;
+  justify-content: space-around;
 }
+
+#filter_by .link {
+  padding-top: 8px;
+}
+
+#item{
+  margin: 30px;
+  border: 2px solid $color1;
+  display: flex;
+  justify-content: space-around;
+}
+.col-sm-4{
+  padding-top: 8px;
+  
+}
+.image-fl-index {
+  padding: 5px;
+}
+
+.total-price-cart{
+  margin: 30px;
+  border: 2px solid $color1;
+  display: flex;
+  justify-content: space-around;
+
+}
+
 
 .form-outline {
 
