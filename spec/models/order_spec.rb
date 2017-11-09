@@ -8,6 +8,11 @@ describe Order do
 
       expect(order).to respond_to(:user)
     end
+    it "has many freelancers" do
+      order = build(:order)
+
+      expect(order).to respond_to(:freelancers)
+    end
   end
 
   describe "order status" do
@@ -38,5 +43,31 @@ describe Order do
       expect(order.status).to eq("Completed")
       expect(order.Completed?).to be_truthy
     end
+  end
+
+  describe "class methods" do
+    before do
+      order_1 = create(:order)
+      order_2 = create(:order, status: 1)
+      order_3 = create(:order, status: 2)
+      order_4 = create(:order, status: 3)
+    end
+
+    it ".total_ordered" do
+      expect(Order.total_ordered).to eq(1)
+    end
+
+    it ".total_paid" do
+      expect(Order.total_paid).to eq(1)
+    end
+
+    it ".total_cancelled" do
+      expect(Order.total_cancelled).to eq(1)
+    end
+
+    it ".total_completed" do
+      expect(Order.total_completed).to eq(1)
+    end
+
   end
 end
