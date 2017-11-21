@@ -7,6 +7,10 @@ Rails.application.routes.draw do
 
   # root to: "welcome#index"
   post '/cart', to: 'cart#create', as: 'cart_index'
+  get '/cart', to: 'cart#show', as: 'cart'
+  patch '/cart', to: 'cart#update'
+  #get '/:id', to: 'categories#show'
+  delete '/cart', to: 'cart#destroy'
    #resources :cart, only: [:create]
 
   #resources :freelancers, only: [:show]
@@ -25,22 +29,25 @@ Rails.application.routes.draw do
   #resources :users, only: [:new, :create, :show]
   #resources :orders, only: [:index, :show, :create]
 
-  namespace :admin do
-    resources :users, only: [:edit, :update, :show]
-    resources :freelancers, only: [:new, :create, :index, :edit, :update]
+  get '/admin/users/:id', to: 'admin/users#show', as: 'admin_user'
+  put '/admin/users/:id', to: 'admin/users#update'
+  patch '/admin/users/:id', to: 'admin/users#update'
+  get '/admin/users/:id/edit', to: 'admin/users#edit', as: 'edit_admin_user'
 
-    resources :orders, only: [:show]
-    get '/dashboard', to: 'orders#index'
-    patch '/dashboard', to: 'orders#update'
-  end
+  get '/admin/freelancers', to: 'admin/freelancers#index', as: 'admin_freelancers'
+  post '/admin/freelancers', to: 'admin/freelancers#create'
+  get '/admin/freelancers/new', to:'admin/freelancers#new', as: 'new_admin_freelancer'
+  get '/admin/freelancers/:id/edit', to: 'admin/freelancers#edit', as: 'edit_admin_freelancer'
+  patch '/admin/freelancers/:id', to: 'admin/freelancers#update'
+  put '/admin/freelancers/:id', to: 'admin/freelancers#update'
+  get '/admin/orders/:id', to: 'admin/orders#show', as: 'admin_order'
+  get 'admin/dashboard', to: 'admin/orders#index', as: 'admin_dashboard'
+  patch 'admin/dashboard', to: 'admin/orders#update'
 
+  # namespace :admin do
+  #   resources :users, only: [:edit, :update, :show]
+  #   resources :freelancers, only: [:new, :create, :index, :edit, :update]
 
-
-  get '/cart', to: 'cart#show'
-  patch '/cart', to: 'cart#update'
-  #get '/:id', to: 'categories#show'
-  delete '/cart', to: 'cart#destroy'
-
-
+    #resources :orders, only: [:show]
 
 end
