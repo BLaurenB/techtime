@@ -6,8 +6,6 @@ The implementation was based on user stories for Categories, Items, and Users.
 To see the project guidelines, please visit http://backend.turing.io/module2/projects/little_shop
 www.turing.io
 
-To view a live version of this application, please go to:
-https://glacial-waters-66098.herokuapp.com/
 
 ## Interacting with the live version of TechTime.
 All users are able to view Categories, Freelancers, and add Freelancer Hours to a cart. Unauthenticated users can create an account.
